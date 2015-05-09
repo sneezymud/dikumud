@@ -1,0 +1,54 @@
+This directory contains the data files used by the game.
+
+CONTENTS:
+--------
+
+ACTIONS         - The 'social actions'. See actions.doc for the data format.
+
+BOARD.MESSAGES  - A binary file containing the contents of the bulletin board.
+
+BUGS            - The messages left by players with the 'bug' command. Contains
+                  the number of the room in which each message was written.
+
+CREDITS         - For the 'credits' command.
+
+HELP            - For 'help <CR>'.
+
+HELP_TABLE      - Table of keywords and associated texts. The format is simple.
+
+IDEAS           - The messages left by players with the 'idea' command.
+
+INFO            - For the 'info' command.
+
+MESSAGES        - Combat messages.
+
+MOTD            - Displayed to the player at login. Should contain information
+                  about recent additons to the game, wedding announcements etc.
+
+NEWS            - For the command 'news'.
+
+PCOBJS.OBJ      - Binary file containing info about objects saved in the inns.
+
+PLAYERS         - Binary file containing all the players.
+
+POSES           - For the 'pose' command, with minimum level and text.
+
+TIME            - Used by the game to keep track of time passed since last run.
+
+TINYWORLD.MOB   - File containing the monsters. See database.doc & dbsup.doc
+
+TINYWORLD.OBJ   - The objects. See database.doc & dbsup.doc
+
+TINYWORLD.SHP   - Info describing the shops, eg. what kind of stuff they deal
+                  in, opening hours, profit rate, etc. See shops.doc for the
+                  format.
+
+TINYWORLD.WLD   - The rooms. See database.doc & dbsup.doc
+
+TINYWORLD.ZON   - Reset tables, describing the actions that are to take place 
+                  at each reset. See database.doc & dbsup.doc
+
+TYPOS           - Messages left by players with the 'typo' command. Same format
+                  as the 'bug' command.
+
+WIZLIST         - For the 'wizlist' command.

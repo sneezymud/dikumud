@@ -1,0 +1,1833 @@
+#3000
+beer barrel~
+a barrel~
+A beer barrel has been left here.~
+~
+17 0 1
+50 50 1 0
+65 300 100
+#3001
+beer bottle~
+a bottle~
+A beer bottle has been left here.~
+~
+17 0 1
+8 8 1 0
+10 20 8
+#3002
+ale bottle dark~
+a bottle~
+A dark bottle of ale has been left here.~
+~
+17 0 1
+8 8 3 0
+10 10 3
+#3003
+firebreather bottle~
+a firebreather~
+A firebreather has been left here.~
+~
+17 0 1
+8 8 7 0
+10 50 17
+#3004
+local bottle~
+a bottle~
+A dark bottle has been left here.~
+~
+17 0 1
+8 8 8 0
+10 20 7
+#3010
+bread~
+a bread~
+A loaf of bread has been left here.~
+~
+19 0 1
+12 0 0 0
+1 10 10
+#3011
+danish pastry~
+a danish pastry~
+A nice looking delicious danish pastry has been placed here.~
+~
+19 0 1
+5 0 0 0
+1 5 5
+#3020
+dagger~
+a dagger~
+A dagger with a long thin blade is here.~
+pierce~
+5 0 8193
+0 1 4 11
+1 10 3
+#3021
+sword small~
+a small sword~
+A small sword lies here.~
+slash~
+5 0 8193
+0 1 6 11
+3 60 20
+E
+sword small~
+The small sword seems to have an inscription of some sort.
+~
+E
+inscription~
+It says : May this sword be a good companion.
+~
+#3022
+sword long~
+a long sword~
+A long sword has been left here.~
+slash~
+5 0 8193
+0 1 8 3
+8 600 200
+#3023
+club wooden~
+a wooden club~
+A simpel looking wooden club is here.~
+pound~
+5 0 8193
+0 1 3 7
+3 12 4
+#3024
+warhammer hammer~
+a warhammer~
+A medium sized warhammer is here.~
+pound~
+5 0 8193
+0 1 5 7
+6 50 17
+#3030
+torch~
+a torch~
+A large torch.~
+~
+1 0 65537
+0 0 24 0
+1 10 3
+#3031
+lantern~
+a lantern~
+A brass lantern.~
+~
+1 0 65537
+0 0 96 0
+1 50 17
+#3032
+bag~
+a bag~
+A small bag.~
+~
+15 0 16385
+50 0 0 0
+2 20 7
+#3033
+box~
+a box~
+A small box.~
+~
+15 0 16385
+10 0 0 0
+5 50 7
+#3040
+breast plate~
+a breast plate~
+A breast plate is lying on the ground.~
+~
+9 0 9
+7 0 0 0
+100 18000 6000
+#3041
+chain mail shirt~
+a chain mail shirt~
+A chain mail shirt is lying on the ground.~
+~
+9 0 9
+5 0 0 0
+60 2500 650
+#3042
+shield~
+a shield~
+A small wooden shield is lying on the ground.~
+~
+9 0 513
+2 0 0 0
+3 100 33
+#3043
+jacket soft leather~
+a leather jacket~
+A soft leather jacket is lying on the ground.~
+~
+9 0 9
+2 0 0 0
+10 200 60
+#3044
+jacket studded~
+a studded leather jacket~
+A studded leather jacket is lying on the ground.~
+~
+9 0 9
+3 0 0 0
+20 500 150
+#3045
+jacket scale mail~
+a scale mail jacket~
+A scale mail jacket is lying on the ground.~
+~
+9 0 9
+4 0 0 0
+40 1000 300
+#3046
+bronze breast plate~
+a bronze breast plate~
+A bronze breast plate is lying on the ground.~
+~
+9 0 9
+6 0 0 0
+80 7000 2250
+#3050
+scroll identify~
+a scroll of identify~
+A scroll has carelessly been left here.~
+~
+2 64 16385
+12 53 -1 -1
+1 2000 50
+E
+scroll identify~
+The scroll has a magic formula drawn upon it:
+     ???
+    ?   ?
+       ?
+      ?
+      ?
+      *
+~
+#3051
+potion yellow~
+a yellow potion of see invisible~
+A small yellow potion has carelessly been left here.~
+~
+10 64 16385
+12 19 -1 -1
+1 400 50
+E
+potion yellow~
+The potion has a small label 'Detect The Invisible'.
+~
+#3052
+scroll recall~
+a scroll of recall~
+A scroll has carelessly been left here.~
+~
+2 64 16385
+12 42 -1 -1
+4 2000 100
+E
+scroll~
+The scroll has written a formulae of 'Word of Recall' upon it.
+~
+#3053
+wand~
+a wand of invisibility~
+A wand has carelessly been left here.~
+~
+3 64 16385
+12 2 2 29
+2 4000 100
+E
+wand~
+The wand is an old dark stick. You notice a small symbol etched at the
+base of the wand. It looks like this:
+
+     \ /
+    - O -
+     / \
+~
+#3054
+staff~
+a staff of sleep~
+A staff has carelessly been left here.~
+~
+4 64 16385
+12 1 1 38
+7 5000 100
+E
+staff~
+The staff is made of old oak, and is around five feet long. It fits
+perfectly into your hand. You notice a small symbol etched at the
+base of the staff, it looks like:
+
+  ZZZZZ
+     Z
+    Z
+   Z
+  ZZZZZ  z   z
+~
+#3060
+raft~
+a raft~
+A raft has been left here.~
+~
+22 0 1
+0 0 0 0
+75 400 20000
+E
+raft~
+The raft looks very primitive.
+~
+#3061
+canoe~
+a canoe~
+A canoe has been left here.~
+~
+22 0 1
+0 0 0 0
+32 1000 10000
+E
+canoe~
+The canoe is fairly light.
+~
+#3070
+gauntlets bronze~
+a pair of bronze gauntlets~
+A pair of bronze gauntlets is lying on the ground.~
+~
+9 0 129
+6 0 0 0
+8 1750 550
+#3071
+gloves leather~
+a pair of leather gloves~
+A pair of leather gloves is lying on the ground.~
+~
+9 0 129
+3 0 0 0
+3 75 25
+#3075
+helmet bronze~
+a bronze helmet~
+A bronze helmet is lying on the ground.~
+~
+9 0 17
+6 0 0 0
+8 3500 1200
+#3076
+cap leather~
+a leather cap~
+A leather cap is lying on the ground.~
+~
+9 0 17
+3 0 0 0
+3 150 50
+#3080
+leggings bronze~
+a pair of bronze leggings~
+A pair of bronze leggings is lying on the ground.~
+~
+9 0 33
+6 0 0 0
+8 3500 1200
+#3081
+pants leather~
+a pair of leather pants~
+A pair of leather pants is lying on the ground.~
+~
+9 0 33
+3 0 0 0
+8 150 50
+#3085
+sleeves bronze~
+a pair of bronze sleeves~
+A pair of bronze sleeves is lying on the ground.~
+~
+9 0 257
+6 0 0 0
+8 1750 550
+#3086
+sleeves leather~
+a pair of leather sleeves~
+A pair of leather sleeves is lying on the ground.~
+~
+9 0 257
+2 0 0 0
+4 75 25
+#3099
+board bulletin~
+a bulletin board~
+A large bulletin board is mounted on a wall here.~
+~
+13 0 0
+0 0 0 0
+0 0 0
+E
+board~
+Use "Look AT board" to see a listing of the messages. Use "Read
+<message number>" or "Remove <message number>" to read or remove
+a message, respectively.
+~
+#3100
+tea cup~
+a cup~
+A cup has been set here.~
+~
+17 0 1
+8 8 11 0
+1 5 1
+E
+cup~
+It is a small simple cup.
+~
+#3101
+coffee cup~
+a cup~
+A cup has been set here.~
+~
+17 0 1
+8 8 12 0
+1 7 1
+E
+cup~
+It is a small simple cup.
+~
+#3102
+water cup~
+a cup~
+A cup has been set here.~
+~
+17 0 1
+16 16 0 0
+1 2 1
+E
+cup~
+It is a large simple cup.
+~
+#3120
+key iron~
+a key~
+An iron key has been left here.~
+~
+18 0 1
+0 0 0 0
+1 0 10
+E
+key iron~
+The iron key is not special.
+~
+#3121
+key rusty~
+a key~
+A rusty key has been left here.~
+~
+18 0 1
+0 0 0 0
+1 0 10
+E
+key rusty~
+The key is a fairly large rusty key. You notice a lot of dirt it.
+~
+#3122
+key wooden~
+a key~
+A wooden key has been left here.~
+~
+18 0 1
+0 0 0 0
+1 0 10
+E
+key wooden~
+The wooden key is not special.
+~
+#3123
+key brass~
+a key~
+A brass key has been left here.~
+~
+18 0 1
+0 0 0 0
+1 0 10
+E
+key brass~
+The brass key is small and looks like it fits a very complicated lock.
+~
+#3130
+desk drawer~
+the desk~
+A desk is set against the western wall.~
+The desk looks very sparse, there is a drawer in the left side.
+~
+15 0 0
+34 15 3122 0
+100 0 100000
+E
+drawer~
+You notice a keyhole in the drawer.
+~
+#3131
+safe~
+the safe~
+A safe is placed in a dark corner of the room.~
+The safe has a keyhole.
+~
+15 0 0
+34 15 3123 0
+100 0 100000
+E
+safe~
+The safe is very heavy.
+~
+#3132
+gold coins~
+the gold~
+A lot of gold is here.~
+Looks like at least 10,000 coins.
+~
+20 0 1
+52385 0 0 0
+0 52385 0
+#3133
+city key~
+the City Key~
+The very big City Key is lying here.~
+It is probably the biggest key you have seen in your life.  It is made from
+polished gold and has various patterns on it along with the Midgaard Coat of
+Arms.
+~
+18 0 1
+0 0 0 0
+10 10000 5000
+#3134
+bench~
+the Bench~
+A white-painted wooden bench is standing here.~
+~
+12 0 0
+0 0 0 0
+100 600 200
+E
+bench~
+It is a quite heavy but very comfortable bench.  It is placed with its front
+towards the river so you can sit and watch the river and the houses on the
+other side.
+~
+#3135
+fountain~
+a fountain~
+A small white fountain is standing at the end of the road.~
+~
+17 0 0
+50 50 0 0
+500 3000 1000
+E
+fountain~
+It is very nice.  Made from fine white marble.
+~
+#3136
+coins gold~
+a small pile of gold coins~
+A small pile of gold coins lies here.~
+~
+20 0 1
+20 0 0 0
+0 0 0
+#3300
+key metal~
+a metal key~
+A small metal key has been dropped here.~
+~
+18 0 1
+0 0 0 0
+1 10 100
+E
+item_for_papi~
+~
+E
+key metal~
+You notice 'My Cottage' has been inscribed on the key.
+~
+#3301
+key brass~
+a brass key~
+An old brass key has been dropped here.~
+~
+18 0 1
+0 0 0 0
+1 10 100
+E
+item_for_quifael~
+~
+E
+key brass~
+It looks as if it is very old.  There are some small marks on it as if
+somebody with tiny (but strong!) teeth has been biting a lot in it.
+~
+#3400
+candlestick~
+a candlestick~
+A pewter candlestick is standing here.~
+~
+1 0 16385
+0 0 24 0
+5 150 50
+E
+candlestick~
+It is a rather old-looking three-armed candlestick made from pewter.  Its
+candles are a yellowish white colour.
+~
+#4000
+ring yellow green~
+a yellow and green ring~
+A ring, with yellow and green ornamentation. It looks very old.~
+~
+9 0 16387
+0 0 0 0
+1 50 20
+E
+ring~
+It feels heavy.
+~
+A
+1 -2
+#4001
+corpse~
+a corpse~
+A halfways decayed corpse of a goblin.~
+~
+15 0 1
+1 0 -1 0
+10 0 500
+#4002
+coins~
+some coins~
+A small pile of coins.~
+~
+20 0 1
+500 0 0 0
+0 0 0
+#4050
+potion purple~
+a purple potion~
+A purple potion is here.~
+~
+10 0 16385
+17 14 36 33
+1 500 200
+E
+potion purple~
+It looks rather strange!
+~
+#4051
+helmet metal~
+a metal helmet~
+A metal helmet in here.~
+~
+9 0 16401
+0 0 0 0
+4 3000 1000
+E
+helmet metal~
+It looks somehow magical!.
+~
+A
+24 -2
+A
+23 -2
+#4052
+mushroom~
+a mushroom~
+A small mushroom is here.~
+~
+19 0 16385
+2 0 0 1
+1 9 3
+E
+mushroom~
+Let's put it this way - I wouldn't eat it !
+~
+#4100
+blade black demon~
+a black demon blade.~
+A black demon blade is here, you sense the forces of evil
+controling the weapon.~
+~
+5 2560 8193 
+0 3 4 11
+8 10000 3500
+E
+blade~
+You'll become as evil as the weapon, if you use it!
+~
+#4101
+gloves~
+a swordmans gloves~
+Some gloves is here. They look like the right kind of
+equipment to use when fighting.~
+~
+9 512 129
+0 0 0 0
+1 1500 500
+E
+gloves~
+Looks very usefull in combat.
+~
+A
+18 2
+A
+19 1
+#4102
+scroll ysafg~
+a scroll which reads "ysafg"~
+A scroll which reads "ysafg", it looks very fragile and quite old.~
+~
+2 0 1
+1 53 0 0
+1 1500 500
+E
+scroll~
+It looks informative.
+~
+#4103
+slime mold~
+a green slime mold~
+A green slime mold is here. Stinks like sh**.~
+~
+19 0 1
+24 0 0 0
+1 20 8
+E
+smile mold~
+It wasn't mend to be food, - Certainly not for humans.
+~
+#4104
+slime mold~
+a green slime mold~
+A green slime mold is here. Stinks like sh**.~
+~
+19 0 1
+24 0 0 1
+1 20 8
+E
+smile mold~
+It wasn't mend to be food, - Certainly not for humans.
+~
+#6000
+axe lumber~
+a lumber axe~
+A heavy lumber axe lies here.~
+chop~
+5 0 8193
+0 2 4 3
+10 50 15
+E
+axe lumber~
+It is a heavy axe of the kind lumberjacks use to chop down trees.
+~
+#6001
+shirt~
+a chequered shirt~
+A chequered shirt lies here.~
+~
+9 0 9
+1 0 0 0
+2 20 8
+E
+shirt~
+It is an extra large, chequered shirt made from heavy cloth.
+~
+#6002
+boots~
+a pair of leather boots~
+A pair of leather boots lies here.~
+~
+9 0 65
+3 0 0 0
+4 60 20
+E
+boots~
+They are fashioned from rough leather that has been oiled frequently to make
+it stay waterproof.  They look worn but quite functional.
+~
+#6003
+fireplace~
+a fireplace~
+A fireplace made from stone is set against the east wall.~
+~
+15 0 0
+200 0 0 0
+0 0 0
+E
+fireplace~
+It is fashioned from stones of various sizes that have been stacked on top of
+each other and fastened with mortar.  Its chimney is constructed likewise and
+leads the smoke out through the low cabin ceiling.
+~
+#6004
+lantern~
+a hooded brass lantern~
+A hooded brass lantern has been left here.~
+~
+1 0 16385
+0 0 100 0
+4 60 20
+E
+lantern~
+It is a large and robust but somewhat battered oil lantern made from brass,
+and it is equipped with a handle to make it handy and a hood to protect its
+flame.  Some letters have been scratched on its bottom.
+~
+E
+letters~
+They say, "Use 'hold lantern' to activate."
+~
+#6005
+chest~
+a wooden chest~
+A wooden chest stands in the corner.~
+~
+15 0 1
+100 -8 6006 0
+40 100 30
+E
+chest~
+It is a robust chest made from short, heavy planks that have been fastened
+together with tenons.  It is equipped with a simple brass lock.
+~
+#6006
+key~
+a small brass key~
+A small brass key lies here.~
+~
+18 0 1
+6005 0 0 0
+1 10 4
+E
+key~
+It is a small, simple brass key with no inscriptions or marks of any kind.
+~
+#6007
+coins gold~
+a heap of gold coins~
+Some gold coins lie piled up in a heap on the floor.~
+~
+20 0 1
+100 0 0 0
+0 0 0
+E
+coins~
+The coins seem to be gold.  They are obviously valuable.
+~
+#6010
+blackberries~
+some blackberries~
+Some blackberries grow on a bush nearby.~
+~
+19 0 1
+3 0 0 0
+1 10 10
+E
+blackberries~
+They look very tasty indeed.
+~
+#6011
+mushroom~
+a mushroom~
+A small mushroom grows nearby.~
+~
+19 0 1
+6 0 0 0
+1 10 10
+E
+mushroom~
+It is a tasty little thing.
+~
+#6012
+sign~
+a large sign~
+A large sign mounted on a pole is standing by the roadside.~
+~
+0 0 0
+0 0 0 0
+100 0 0
+E
+pole~
+Not the most interesting pole in the world.
+Better leave it here, though, as it holds the sign in place.
+~
+E
+sign~
+It says :-
+
+                         Haon-Dor
+                         --------
+
+ This is the Forest of Haon-Dor.  Enter at your own risk.
+     Please report any strange occurrences to Quifael.
+
+~
+#6013
+water barrel~
+the barrel~
+A water barrel has been left here.~
+~
+17 0 1
+50 50 0 0
+65 60 20
+#6101
+sign~
+a sign~
+An old, battered sign lies on the ground.~
+~
+0 0 1
+0 0 0 0
+10 2 2
+E
+sign~
+Only some of the letters are legible :-
+                _
+      _________| |_________
+     /         | |         \
+    /  CAR.AX  | |  M.STY   \
+    \  M..SI.N | |  SW..P   /
+     \_________| |_________/
+               | |
+~
+#6102
+tree opening~
+a colossal tree~
+A colossal tree blocks the way westwards.~
+~
+15 0 0
+1000 0 0 0
+0 0 0
+E
+tree~
+This enourmous tree must be a thousand years old.  Its rough bark looks grey
+and pale and is decorated with scratches and clawmarks.  On its west side is a
+small opening just above ground level.
+~
+E
+opening~
+The opening is far too narrow for you to squeeze through but it looks as if the
+tree is hollow.
+~
+#6103
+branch~
+a long, grey branch~
+A long, grey branch rests heavily on the ground.~
+~
+1 0 16385
+0 0 25 0
+20 1 3
+E
+branch~
+It is quite heavy and looks as if it has been dropped from great height.  It is
+long dead and very dry.  Could probably be lighted quite easily.
+~
+#6104
+branch~
+a long, grey branch~
+A long, grey branch rests heavily on the ground.~
+pound~
+5 0 8193
+0 2 5 7
+30 60 20
+E
+branch~
+It is very heavy and looks as if it has been dropped from great height.  It is
+long and straight and the wood is very hard, still being full of sap.  Although
+it does not fit very well in your hand, it could be used as a clumsy but very
+heavy weapon.
+~
+A
+18 -2
+#6105
+branch~
+a long, grey branch~
+A long, grey branch rests heavily on the ground.~
+~
+0 0 1
+0 0 0 0
+40 0 0
+E
+branch~
+It is very heavy and looks as if it has been dropped from great height.  It is
+somewhat twisted and the hard wood is still full of sap.
+~
+A
+18 -2
+#6106
+toadstool~
+a toadstool~
+A large toadstool grows nearby.~
+~
+19 0 1
+12 0 0 0
+5 20 20
+E
+toadstool~
+It is a large, brown boletus that must weigh nearly five pounds.  The top
+surface is covered in a thin layer of transparent slime that emits a weak,
+musty smell.  Not the most delicious thing you have seen.
+~
+#6107
+toadstool~
+a toadstool~
+A large toadstool grows nearby.~
+~
+19 0 1
+12 0 0 1
+5 20 20
+E
+toadstool~
+It is a large, brown boletus that must weigh nearly five pounds.  It has small
+white spots and the top surface is covered in a thin layer of transparent slime
+that emits a weak, musty smell.  Not the most delicious thing you have seen.
+~
+#6108
+coins gold~
+a big pile of gold coins~
+A big pile of gold coins is lying here.~
+~
+20 0 1
+10000 0 0 0
+0 0 0
+#6109
+potion blue~
+a blue potion~
+A blue potion has been left here.~
+~
+10 64 1
+15 28 -1 -1
+2 1000 300
+E
+potion blue~
+It has a nice sky blue colour and a smell like peppermint.
+~
+#6110
+potion yellow~
+a yellow potion~
+A yellow potion has been left here.~
+~
+10 64 1
+15 39 -1 -1
+2 1000 300
+E
+potion yellow~
+It has a deep yellow colour and and a strong spicy smell.
+~
+#6111
+shield large~
+a large round shield~
+A large round shield has been left here.~
+~
+9 0 513
+5 0 0 0
+15 300 100
+E
+shield large~
+It is made from hard wood that has been reinforced with heavy iron bands.
+~
+#6112
+crown iron~
+an iron crown~
+An iron crown rests on the ground.~
+~
+9 64 17
+4 0 0 0
+10 5000 1500
+E
+crown iron~
+It is a heavy human-sized crown made from solid iron.
+~
+#6113
+sceptre iron~
+an iron sceptre~
+An iron sceptre lies on the ground.~
+~
+1 64 16385
+0 0 -1 0
+10 5000 1500
+E
+sceptre iron~
+It is a heavy sceptre made from solid iron.
+~
+#6114
+ring iron~
+an iron ring~
+An iron ring has been left here.~
+~
+9 64 3
+1 0 0 0
+1 5000 1500
+E
+ring iron~
+It is a quite heavy human-sized ring made from solid iron.  It lacks
+decorations of any kind.
+~
+#6900
+optimizer~
+Quifael's global optimizer~
+Quifael's global optimizer has been left here.~
+chop~
+5 0 8193
+0 3 6 3
+1 10 10000
+E
+optimizer~
+It is a very unpredictable piece of software, consisting mostly of
+self-modifying code and inexcusable goto commands.  Looks very dangerous.
+~
+A
+18 2
+A
+19 2
+#6910
+shirt scale~
+a black dragon scale shirt~
+A black dragon scale shirt has been left here.~
+~
+9 64 9
+6 0 0 0
+10 10000 3000
+E
+shirt scale~
+It is a sleeveless shirt made from big, black dragon scales joined with silver
+threads.  Its inside has been made from the soft skin on the dragon's belly,
+making it very comfortable to wear.  The name "Isha" has been engraved on one
+of the scales.
+~
+#6911
+skirt scale~
+a black dragon scale skirt~
+A black dragon scale skirt has been left here.~
+~
+9 64 33
+6 0 0 0
+8 5000 1500
+E
+skirt scale~
+It is a short skirt made from big, black dragon scales joined with silver
+threads.  Its inside has been made from the soft skin on the dragon's belly,
+making it very comfortable to wear.  The name "Isha" has been engraved on one
+of the scales.
+~
+#6912
+cloak black~
+a black, hooded cloak~
+A large, hooded cloak, as dark as the night, has been left here.~
+~
+9 64 1025
+6 0 0 0
+20 8000 3000
+E
+cloak black~
+It is a heavy, black cloak with a large hood.  The name "Isha" is written
+inside it with a silver thread.
+~
+A
+23 -2
+#6913
+belt silver~
+a broad silver belt~
+A broad silver belt has been left here.~
+~
+9 64 2049
+6 0 0 0
+4 5000 1500
+E
+belt silver~
+It is a broad belt made from tiny silver rings woven together.
+~
+#6914
+sword long slender~
+a long, slender sword~
+A long, slender sword lies on the ground.~
+slash~
+5 2625 8193
+0 3 6 3
+4 30000 10000
+E
+sword long slender~
+It is a long, slender sword that seems to be made from silver.  The name
+"Isha" has been engraved on the hilt.
+~
+A
+18 2
+A
+19 2
+#6950
+coffee machine~
+a coffee machine~
+A coffee machine is standing here.~
+~
+15 2 0
+3 0 -1 0
+100 3000 300
+E
+coffee machine~
+It is a big old-fashioned thing that most of all resembles a cupboard with a
+slot large enough to hold three coffee cups at once.  It doesn't appear to
+have any buttons or any other means of control.  Golden letters on its front
+tell that this is a Quifatronic C-1000 mk I.
+~
+#6951
+coffee cup~
+a coffee cup~
+A coffee cup has been left here.~
+~
+17 0 1
+3 3 12 0
+1 6 3
+E
+coffee cup~
+It is a small white throwaway cup that has 'Keep MudLand tidy' written on its
+side and 'Quifatronic C-1000 mk I' on its bottom.
+~
+#6999
+scythe~
+the Scythe of Death~
+The Scythe of Death rests heavily on the ground.~
+reaps~
+5 0 8193
+0 1 100 3
+100 30000 10000
+E
+scythe~
+It is a very heavy scythe.  The grey handle is made from hard wood and the long
+iron blade is completely smooth from countless years of use.  It feels cold to
+the touch.
+~
+#7090
+waybread food~
+a waybread~
+Some waybread has been put here.~
+~
+19 0 1
+24 0 0 0
+1 50 50
+E
+waybread~
+The waybread is the traditional feed of elves when travelling, they call it
+lembas.  It is said to refresh the weary traveler greatly.
+~
+#7190
+ring silver silverring~
+a glinting ring of silver~
+A lovely silverring has been left here.~
+~
+1 64 3
+0 0 10 0
+1 46 30000
+A 
+17 -10
+A
+18 +2
+#7191
+ring gold goldring~
+a golden ring~
+A shiny goldring has been abandoned here.~
+~
+13 64 3
+1 0 0 0
+1 0 1000
+A
+3 +5
+#7200
+rod devil~
+the devil rod~
+The mysterious devil rod lies on the floor.~
+crush~
+5 64 8193
+0 2 6 3
+6 16000 6000
+E
+devil rod~
+This is indeed a mysterious rod.  It is dark black at the base but has four
+very sharp purple tentacles at the end.
+~
+A
+18 2
+A
+1 -1
+#7201
+mace large~
+the large mace~
+A large mace lies here.~
+crush~
+5 64 8193
+0 1 6 7
+10 1000 200
+E
+large mace~
+The mace is pretty large with a weight of 10 lbs.  The head is actually four
+purple tentacles tied together.
+~
+A
+19 2
+#7202
+mace small~
+the small mace~
+a small mace has been left here.~
+crush~
+5 64 8193
+0 1 6 7
+6 600 100
+E
+small mace~
+This weapon does look like it does a lot of damage, but then you never know.
+It consists of a black handle and a purple head.
+~
+A
+19 1
+#7203
+cloak purple~
+a purple cloak~
+A purple cloak lies on the floor.~
+~
+12 64 5
+0 0 0 0
+20 5000 2500
+E
+cloak purple~
+This is a very fine made cloak from an unknown material, in a nice purple
+color.
+~
+A
+24 1
+A
+17 -10
+#7204
+potion blue~
+an neon blue potion~
+A neon blue potion stands on the floor.~
+~
+10 64 1
+14 6 -1 -1
+4 100 200
+E
+potion blue~
+In the flask is a transparent electric blue liquid.
+~
+#7205
+key black~
+a black key~
+A black key has been left on the floor.~
+~
+18 0 1
+0 0 0 0
+2 10 1000
+E
+black key~
+This little key is made from a black metal of unknown origin.
+~
+#7206
+skull white~
+a strange white skull~
+A strange white skull lies on the floor looking at you.~
+~
+9 192 17
+1 0 0 0
+30 0 2500
+E
+white skull~
+The skull has two small horns in the forehead. You notice some writing on
+the inside.
+~
+E
+writing text~
+You read the number '666'.
+~
+A
+2 -4
+#7207
+gauntlets muddy~
+a pair of muddy gauntlets~
+A pair of muddy gauntlets have been thrown away here.~
+~
+9 64 129
+2 0 0 0
+10 60 40
+E
+muddy gauntlets~
+These gauntlets are muddy indeed, however they look very effective.
+~
+A
+1 1
+#7208
+stick small light~
+a small stick~
+A small stick lies here.~
+~
+1 0 16385
+0 0 -1 0
+4 200 200
+E
+small stick~
+The small stick does not look interesting at all.  But just as you are going
+to throw it away you notice some small letters.
+~
+E
+letters letter~
+It reads 'Hold me'.
+~
+#7209
+boots muddy~
+a pair of muddy boots~
+A pair of muddy boots has been dropped here.~
+~
+9 64 65
+2 0 0 0
+20 75 100
+E
+The boots are muddy and they look well worn, but also very comfortable.~
+~
+#7210
+treasure coins~
+a huge treasure~
+There is a huge treasure here, looking very valuable.~
+~
+20 0 1
+6000 0 0 0
+0 0 0
+E
+treasure~
+This looks like a whole lot of coins.
+~
+#7211
+sword short~
+a short sword~
+There lies a short sword.~
+stab~
+5 0 8193
+0 2 4 11
+4 60 20
+E
+small sword~
+This is a very nice little weapon.
+~
+#7212
+sword bastard~
+a huge bastard sword~
+There is a huge bastard sword here.~
+slash~
+5 3136 8193
+0 2 8 3
+18 1700 500
+E
+bastard sword~
+Quite a heavy weapon, with a pure white hilt.
+~
+A
+19 3
+#7213
+helmet large~
+a large helmet~
+There is a large helmet on the floor.~
+~
+9 64 17
+7 0 0 0 
+5 4500 1500
+E 
+large helmet~
+This looks like some heavy protection, for the head of course.
+~
+#7214
+helmet caos~
+a caos helmet~
+On the floor is a grand evil-looking caos helmet.~
+~
+9 2624 17
+6 0 0 0
+8 2300 1000
+E
+caos helmet~
+This helmet has mounted some mean looking spikes on the front, moreover it
+looks like good protection.
+~
+A
+1 1
+A
+24 -2
+#7215
+sabre light~
+a light sabre~
+On the floor lies a strange looking sabre.~
+~
+1 3136 16385
+0 0 10000 0
+4 1500 300
+E
+light sabre~
+This looks as a sabre out of an wellknown SF-movie.
+~
+A
+18 +10 
+#7216
+sword two-handed~
+a two-handed sword~
+On the floor rests a enormous two-handed sword.~
+slash~
+5 1600 8193
+0 3 4 3
+22 1800 900
+E
+two-handed sword~
+You notice that there has been inscribed some runes and a sort of pattern,
+which resembles flames running along the edge.
+~
+E 
+runes~
+On the blade you can read 'Flame And Strength United Are My Soul Power'.
+~
+A
+17 +15
+A
+19 +3
+#7217
+plate breast~
+a silvery breast plate~
+There is a silvery breast plate on the floor.~
+~
+9 3392 9
+8 0 0 0
+70 25000 6000
+E
+plate breast~
+On the breast plate you notive a relief of large rose. The metal seems to be 
+some kind of silver or platinium.
+~
+#7218
+plates leg~
+some leg plates~
+On the floor you see some leg plates.~
+~
+9 3392 33
+8 0 0 0 
+40 12500 5000
+E
+leg plates~
+They seem to be made from silver or platinum. You see the outline of a rose.
+~
+#7219
+gloves~
+a pair of gloves~
+You can see a pair of gloves on the floor.~
+~
+9 3392 129
+3 0 0 0
+14 900 1000
+E
+gloves~
+The gloves are made of silver threads.
+~
+A
+18 1
+#7220
+helmet~
+a silvery helmet~
+The silvery helmet lies here.~
+~
+9 3392 17
+9 0 0 0
+35 9000 3000
+E
+helmet~
+The helmet is made from platinum or silver and has a white fur brush attached
+on the top.
+~
+#7221
+shield~
+the shield of the rose~
+The shield of the rose rests on the floor.~
+~
+9 3392 513
+10 0 0 0
+60 15000 1000
+E
+shield~
+On the shield you see a clear and perfect painting of a dark red rose on a white
+background. You also notice the inscription :'Pax Est Sanctuum'.
+~
+#7222
+boots~
+a pair of heavy plated boots~
+A pair of heavy plated boots stand on the floor.~
+~
+9 3392 65
+8 0 0 0
+40 2000 1000
+E
+boots~
+The boots are made from a silvery metal.
+~
+#7223
+plates arm~
+some arm plates~
+On the floor you see some arm plates.~
+~
+9 3392 257
+8 0 0 0
+40 12500 7000
+E
+plates arm~
+They seem to be made from silver or platinum. You see the outline of a rose.
+~
+#7900
+key large steel~
+a large key~
+A large steel key has been left here.~
+~
+18 0 1
+2 0 0 0
+2 10 1000000
+E
+steel key~
+This huge key is made from solid steel.
+~
+E
+item_for_redferne~
+~
+E
+item_for_naoniel~
+~
+#7901
+key copper~
+a copper key~
+A copper key has been left on the floor.~
+~
+18 0 1
+2 0 0 0
+2 10 100000
+E
+copper key~
+This little key is made from copper.
+~
+E
+item_for_redferne~
+~
+E
+item_for_naoniel~
+~
+#7909
+treasure coins~
+a huge treasure~
+There is a huge treasure here, looking very valuable.~
+~
+20 0 1
+1000000 0 0 0
+0 0 0
+E
+treasure~
+This looks like a whole lot of coins.
+~
+#7910
+chest~
+a wooden chest~
+A wooden chest stands in the corner.~
+~
+15 0 1
+100 15 7911 0
+400 100 30000
+E
+chest~
+It is a robust chest made from short, heavy planks that have been fastened
+together with tenons.  It is equipped with a simple brass lock.
+~
+#7911
+key~
+a small brass key~
+A small brass key lies here.~
+~
+18 0 1
+7910 0 0 0
+1 10 4
+E
+key~
+It is a small, simple brass key with no inscriptions or marks of any kind.
+~
+#8100
+strip aluminum~
+a small strip of aluminum~
+A small strip of aluminum is lying here.~
+~
+18 0 16385
+0 0 0 0
+0 0 100
+E
+strip aluminum~
+It is app. 2 X 5" big, with a purple stripe down the middle of the long 
+side. Arrayed by the stripe are a number of very small holes, obviously 
+set in some meaningful pattern.
+~
+E
+pattern~
+You can't understand what it is supposed to mean. It looks like this:
+     ... .. .   . .. ... .   . ..
+     .  .. .... ... ... .... .. .
+     ============================
+     ... ... ... .      .   ... .
+     .         . . ....       . .
+~
+#8101
+dish dirty~
+a dirty dish~
+There is a dirty dish standing here.~
+~
+13 0 16385
+0 0 0 0
+1 0 400
+E
+dish dirty~
+It is about 10" across, made from a thin sheet of metal, and the 
+remains of something that smells like chili has been allowed to get 
+_really_ attached to it.
+~
+#8102
+chunk square~
+a chunk of glass~
+There is chunk of glass lying here.~
+~
+12 2 16385
+0 0 0 0
+2 10 200
+E
+chunk glass~
+It is 10 X 15 X 2", and quite regular. It is transparent, and, while 
+probably not glass, it still feels like glass. There are a large number 
+of tiny, needlethin blue lines inside it, and a 1 X 1" square red 
+button near one corner.
+~
+E
+button red~
+As you push the button, a message appears on the slab, in glowing 
+blue letters:
+                       SPECIAL EFFECTS PROGRAM
+                          NOT OPERABLE YET
+~
+#8113
+bone~
+a bone~
+There is a glass-like bone lying here.~
+pound~
+5 0 24577
+0 1 4 7
+5 2 300
+E
+bone~
+It looks like an ordinary thighbone, except that it is carved from 
+glass by somebody very good. It is quite heavy, but somewhat clumsy to 
+swing, should one use it as a weapon.
+~
+A
+18 -1
+#8120
+whip electrowhip~
+a blueish whip~
+A strange, metallic blue whip has been carelessly left here.~
+whip~
+5 3 24577
+0 1 20 3
+1 100 100
+E
+whip blue~
+It is a wicked cord of spun metal, amazingly supple and light, and set
+with nasty little razor-like blades on the outer third, about one yd.
+~
+A
+19 -1
+#8121
+satchel bag~
+a leather satchel~
+A scuffed and worn leather satchel has been left here.~
+~
+15 0 16385
+20 0 0 0
+2 20 200
+E
+satchel bag~
+While the bag in it self look ordinary enough, even perhaps somewhat
+dingy, the closing mechanism is rather unusual (and somewhat noisy), as
+it consists of to strips of strange cloth which sticks to each other 
+like burrs, but doesn't stick to anything else. It makes a loud 'ripping' 
+sound when opened.
+~
+#8900
+sign~
+the sign~
+There is a heavy metal sign, mounted on a pole set in a block of cement,
+standing here next to the tree structures. Large unpleasantly-purple
+letters disgrace its otherwise shiningly polished surface.~
+hammer~
+5 0 24577
+0 2 8 7
+200 10 2000
+E
+sign letters~
+Written on the sign, with purple spray paint using a letter template, is:
+
+                ====================================
+                           N O   E N T R Y
+
+                      ACCESS TEMPORARILY CLOSED
+                         SECTOR UNDER REPAIR
+
+                                  / MATRIX CONTROL
+                ====================================
+~
+A
+18 -2
+#8901
+sign poster notice~
+the poster~
+A large poster, with big, brightly-coloured letters has been 
+pasted on the wall here.~
+~
+12 0 0
+0 0 0 0
+0 0 0
+E
+sign poster letters~
+It is a wonderful Boris Vallejo painting of a husky barbarian and a
+scantily-clad lady, with large letters saying:
+
+"            	looking for a
+			GOOD TIME?"
+
+and at the bottom:
+
+"	NEW & EXCITING Attration, Right Here:
+		The MAZE, with:
+
+		* Mountains & Valleys *
+		* Tunnels & Trolls    *
+		* Danger & Adventure  *
+
+			presented to You by
+				the DRAGON   "
+
+Pasted across it is a white paper with atrocious purple letters,
+obstructing the view of the better parts.
+~
+E
+paper white~
+The text is spray-painted on using a letter template:
+
+                ====================================
+                           N O   E N T R Y
+
+                      ACCESS TEMPORARILY CLOSED
+                         SECTOR UNDER REPAIR
+
+                                  / MATRIX CONTROL
+                ====================================
+
+It is annoying, since you cant see the _good_ parts of the Vallejo
+poster, but it seems to be glued on pretty solid.
+~
+#8999
+$~

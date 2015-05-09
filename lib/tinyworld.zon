@@ -1,0 +1,663 @@
+#0
+LIMBO~
+3 1 0
+M 0 1 1 1		Puff
+S
+#30
+Northern Midgaard Main City~
+3099 30 2
+*
+O 0 3300 1 3055       Papi's Key
+O 0 3301 1 3055       Quifael's Key
+O 0 7900 1 3055       Redferne's Key 1
+O 0 7901 1 3055       Redferne's Key 2
+*
+M 0 3000 1 3033       The Wizard Shop Keeper
+G 1 3050 500                Give brown potion of cure light wounds.
+G 1 3051 500                Give potion of see invisible.
+G 1 3052 500                Give ...?
+G 1 3053 500                Give ...?
+G 1 3054 500                Give ...?
+*
+M 0 3003 1 3011       The weaponsmith
+G 1 3020 100
+G 1 3021 100
+G 1 3022 100
+G 1 3023 100
+G 1 3024 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3004 1 3020       The armourer
+G 1 3040 100
+G 1 3042 100
+G 1 3044 100
+G 1 3076 100
+G 1 3081 100
+G 1 3070 100
+G 1 3071 100
+G 1 3075 100
+G 1 3080 100
+G 1 3085 100
+G 1 3086 100
+G 1 3041 100
+G 1 3043 100
+G 1 3046 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3002 1 3010       The grocer
+G 1 3030 100
+G 1 3031 100
+G 1 3032 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3001 1 3009       The baker
+G 1 3010 100
+G 1 3011 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3005 1 3008       The receptionist
+E 1 3022 100 16            wields a smallsword
+*
+M 0 3006 1 3049       A Captain (selling boats) at Levee
+G 1 3060 20              Give a raft to the captain
+G 1 3061 10              Give canoe to Captain
+*
+M 0 3007 1 3050       Sailor selling stuff in the warehouse
+*
+M 0 3040 1 3007       The bartender
+G 1 3000 100
+G 1 3001 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3043 1 3003       The Clerics waiter.
+G 1 3002 100
+G 1 3004 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3042 1 3018       The Magic Users Waiter
+G 1 3002 100
+G 1 3003 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3045 1 3022       The Fighters Waiter
+G 1 3002 100
+G 1 3003 100
+G 1 3004 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3044 1 3028       The Thiefs Waiter
+G 1 3003 100
+G 1 3004 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3046 1 3048       Filthy (bartender) in Grubby Inn
+G 1 3003 100
+G 1 3004 100
+E 1 3022 100 16            wields a longsword
+*
+M 0 3020 1 3019       The Magic Users Guildmaster
+M 0 3021 1 3002       The Clerics Guildmaster
+M 0 3022 1 3029       The Thieves Guildmaster
+M 0 3023 1 3023       The Warrior's Guildmaster
+*
+M 0 3024 1 3017       The Sorcerer Guard
+E 1 3022 100 16            wields a longsword
+*
+M 0 3025 1 3004       The Priest Guard
+E 1 3022 100 16            wields a longsword
+*
+M 0 3026 1 3027       The Assasin Guard
+E 1 3022 100 16            wields a longsword
+*
+M 0 3027 1 3021       The Knight Guard
+E 1 3022 100 16            wields a longsword
+*
+M 0 3060 10 3004      CityGuard 1
+E 1 3022 100 16            wields a longsword
+*
+M 0 3060 10 3014      CityGuard 2
+E 1 3022 100 16            wields a longsword
+*
+M 0 3060 10 3017      CityGuard 3
+E 1 3022 100 16            wields a longsword
+*
+M 0 3060 10 3021      CityGuard 4
+E 1 3022 100 16            wields a longsword
+*
+M 0 3060 10 3027      CityGuard 5
+E 1 3022 100 16            wields a longsword
+*
+M 0 3067 10 3041      CityGuard at east gate
+E 1 3022 100 16            wields a longsword
+*
+M 0 3067 10 3040      CityGuard at west gate
+E 1 3022 100 16            wields a longsword
+*
+M 0 3063 5 3026       A Mercenary (at Dark Alley)
+E 1 3021 100 16            wields a shortsword
+*
+M 0 3064 3 3007       A Happy Drunk (at Inn)
+M 0 3065 2 3044       A Beggar in poor alley
+M 0 3065 2 3048       A Beggar in Grubby Inn
+*
+M 0 3062 15 3024      The Cute Little Doggy Fido (at Poor Alley)
+M 0 3062 15 3025      The Cute Little Doggy Fido (at Common Square)
+M 0 3062 15 3016      The Cute Little Doggy Fido (at Main Street)
+M 0 3062 15 3012      The Cute Little Doggy Fido (at Main Street)
+M 0 3066 1 3026       The Cute Little Odif Yggod (at Dark Alley)
+*
+M 0 3061 5 3006       The Janitor (at Inn Entrance)
+*
+M 0 3090 1 3032       Kitten
+M 0 3091 1 3032       Puppy
+M 0 3092 1 3032       Beagle
+M 0 3093 1 3032       Rottweiler
+M 0 3094 1 3032       Wolf
+*
+O 0 3099 1 3001       Bulletin board in Temple (limbo for starters)
+*
+S
+#31
+Southern part of Midgaard~
+3199 40 2
+*
+D 0 3110 1 2          Lock door from HQ to road
+D 0 3111 3 2          Lock door from road to HQ
+D 0 3129 2 2          Lock graveyard from outside
+D 0 3400 0 2          Lock graveyard from inside
+*
+O 0 3134 3 3101       Bench 1 at promenade
+O 0 3134 3 3102       Bench 2 at promenade
+O 0 3134 3 3103       Bench 3 at promenade
+*
+M 0 3100 1 3106       Maid in Park Cafe
+G 1 3100 500             A cup of tea
+G 1 3101 500             A cup of coffee
+G 1 3102 500             A cup of water
+*
+M 0 3120 1 3106       Sexton in Park Cafe
+G 1 3121 2               A rusty old key (to graveyard)
+*
+M 0 3121 1 3114       Swan in Pond
+M 0 3122 1 3114       Duckling in Pond
+M 0 3123 1 3109       Sparrow in Park
+M 0 3124 2 3113       Duck 1 in Park
+M 0 3124 2 3115       Duck 2 in Park
+*
+M 0 3140 1 3110       Chief (guard) in H.Q.
+G 1 3122 2               Give chief A wooden key to the desk.
+M 0 3141 4 3110       Mad Guard in H.Q.
+M 1 3141 4 3110       Mad Guard in H.Q.
+M 1 3141 4 3110       Mad Guard in H.Q.
+M 1 3141 4 3110       Mad Guard in H.Q.
+*
+*R 0 3110 3130         Remove the desk (if any)
+*R 0 3110 3131         Remove the safe (if any)
+O 0 3130 1 3110       Load the desk
+P 1 3123 1 3130         Put brass key in desk
+O 0 3131 1 3110       Load the safe
+P 1 3132 1 3131       Put money in safe
+*
+M 0 3060 20 3111      CityGuard 1
+E 1 3022 100 16            wields a longsword
+G 1 3120 2                 Has an iron key to H.Q.
+M 0 3060 20 3111      CityGuard 2
+E 1 3022 100 16            wields a longsword
+M 0 3060 20 3111      CityGuard 3
+E 1 3022 100 16            wields a longsword
+M 0 3060 20 3111      CityGuard 4
+E 1 3022 100 16            wields a longsword
+*
+M 0 3142 1 3137       Secretary at town hall
+M 0 3143 1 3138       Mayor at town hall
+E 1 3133 1 17              Has the City Key
+*
+M 0 3144 1 3120       Town Crier
+*
+O 0 3135 1 3141       Fountain on Penny Lane
+O 0 3136 1 3141       20 coins on Penny Lane
+*
+S
+#32
+River of Midgaard~
+3299 40 0
+*
+S
+#33
+Buildings in Midgaard~
+3399 120 0
+*
+D 0 3300 3 2          Close and lock from cottage to street
+D 0 3118 1 2          Close and lock from Park Road.
+O 0 3100 777 3300     Load a cup of tea into Papi's Cottage.
+M 0 3300 1 3300       Load Papi's kitten into his cottage.
+*
+D 0 6904 3 2          Close and lock from Quifael to street
+D 0 3126 1 2          Close and lock from Park Road.
+*
+S
+#34
+The Graveyard~
+3499 40 2
+*
+D 0 3404 2 1          Close Chapel door from outside
+D 0 3405 0 1          Close Chapel door from inside
+O 0 3400 1 3405       Candlestick in Chapel
+*
+S
+#40
+Moria level 1-2~
+4099 20 2
+*
+* Level 1
+*
+M 0 4000 1 4030     The large snake
+G 1 4001 1          Carry a goblin corpse
+P 1 4002 1 4001     Which contains 500 coins.
+*
+M 0 4001 2 4025     a green snake
+M 0 4001 2 4015     a green snake
+*
+M 0 4002 3 4023     a centipede
+M 0 4002 3 4017     a centipede
+M 0 4002 3 4020     a centipede
+*
+M 0 4003 6 4021     a kobolt
+M 0 4003 6 4021     a kobolt
+M 0 4003 6 4013     a kobolt
+M 0 4003 6 4013     a kobolt
+M 0 4003 6 4027     a kobolt
+M 0 4003 6 4027     a kobolt
+*
+M 0 4004 3 4015     an ork
+M 0 4004 3 4028     an ork
+M 0 4004 3 4028     an ork
+*
+M 0 4005 1 4022     a large ork
+E 1 4000 5 1        ring of weakness on left finger
+*
+* Moria level 2
+*
+M 0 4050 1 4062     a warrior
+G 1 4051 3          give him a helmet of savin' throw
+*
+M 0 4051 4 4070     a warrior
+M 0 4051 4 4050     a warrior
+M 0 4051 4 4073     a warrior
+M 0 4051 4 4055     a warrior
+*
+M 0 4052 3 4056     a hobgoblin
+M 0 4052 3 4065     a hobgoblin
+M 0 4052 3 4059     a hobgoblin
+*
+M 0 4053 2 4058     a snake
+M 0 4053 2 4068     a snake@
+*
+M 0 4054 3 4060     a centipede
+M 0 4054 3 4053     a centipede
+M 0 4054 3 4052     a centipede
+*
+M 0 4055 2 4064     a hobgoblin
+G 1 4050 100         give him a purple potion
+M 0 4055 2 4071     a hobgoblin
+G 1 4050 100         give him a purple potion
+*
+M 0 4056 2 4067     an orc
+M 0 4056 2 4057     an orc
+*
+O 0 4052 8 4068     plant a mushroom
+O 0 4052 8 4069     plant a mushroom
+O 0 4052 8 4070     plant a mushroom
+O 0 4052 8 4071     plant a mushroom
+*
+S
+#41
+Moria level 3-4~
+4199 40 2
+*
+* Level 1
+*
+M 0 4100 1 4114    The mage
+G 1 4102 2         Scroll of identify.
+*
+M 0 4101 1 4122    The troll
+G 1 4100 2         The blade
+*
+M 0 4102 3 4111    The snakes
+G 1 4103 10        Slime
+M 0 4102 3 4111    The snakes
+G 1 4104 3         Poisoned slime
+*
+M 0 4102 3 4103    A thief
+G 1 4103 10        Slime
+G 1 4104 3         Poisoned slime
+*
+M 0 4103 3 4124    A orc
+G 1 4104 10        Slime
+*
+M 0 4105 3 4108    A centipede
+*
+M 0 4106 2 4113    A warrior
+G 1 4101 1         Some gloves
+*
+M 0 4107 1 4119    A kobold
+G 1 4104 10        Slime
+*
+S
+#60
+HAON-DOR-LIGHT~
+6099 30 2
+* Mobiles & equipment
+M 0 6000 1 6009  John the Lumberjack
+E 1 6000 10 16     axe Equipped (WIELD)
+E 1 6001 10 5      shirt Equipped (BODY)
+E 1 6002 10 8      boots Equipped (FEET)
+D 0 6009 0 1     Cabin door must be closed
+M 0 6001 5 6012  Rabbit 1
+M 0 6001 5 6015         2
+M 0 6001 5 6017         3
+M 0 6001 5 6019         4
+M 0 6002 1 6022  Brown bear
+M 0 6004 1 6023  Fallow deer
+M 0 6005 2 6014  Brown fox
+* Objects
+O 0 6003 1 6010  John's fireplace
+O 0 6004 1 6010  John's lantern
+O 0 6005 1 6010  John's wooden chest
+P 1 6007 1 6005    Coins (In chest)
+P 1 6006 1 6003  John's brass key (In fireplace)
+O 0 6013 3 6010  Water barrel
+O 0 6010 2 6023  Blackberries
+O 0 6011 3 6006  Mushroom 1
+O 0 6011 3 6013           2
+O 0 6011 3 6016           3
+O 0 6012 1 6000  The news sign
+S
+#61
+HAON-DOR-DARK~
+6199 30 2
+* Mobiles and equipment
+M 0 6100 2 6116  Vicious warg
+M 0 6100 2 6116  Vicious warg
+M 0 6101 2 6127  Ferocious warg
+M 0 6101 2 6127  Ferocious warg
+M 0 6102 4 6108  Grey wolf 1
+M 0 6102 4 6108  Grey wolf 1
+M 0 6102 4 6104            2
+M 0 6102 4 6104            2
+M 0 6103 4 6112  Black wolf 1
+M 0 6103 4 6112  Black wolf 1
+M 0 6103 4 6118             2
+M 0 6103 4 6118             2
+M 0 6110 4 6120  Tree 1.1
+M 0 6110 4 6123       1.2
+M 0 6111 4 6109       2.1
+M 0 6111 4 6105       2.2
+M 0 6112 1 6143  Green dragon
+G 1 6108 10        10,000 gold     Carried
+G 1 6110 10        Strength potion (Carried)
+G 1 6112 1         Iron crown (Carried)
+O 1 6111 10 6143   Shield
+M 0 6113 3 6133  Posionous spider 1
+M 0 6113 3 6133                   2
+M 0 6113 3 6133                   3
+M 0 6114 1 6134  Queen Spider
+G 1 6108 10        10,000 gold     Carried
+G 1 6109 10        Healing potion       Carried
+G 1 6113 1         Iron sceptre       Carried
+M 0 6115 1 6100  Shargugh the Forest Brownie
+E 1 6114 1 1       Iron ring (Equipped (FINGER_R))
+* Objects
+O 0 6102 1 6103  Hollow tree
+O 0 6103 1 6113  Branch, light
+O 0 6104 1 6125  Branch, weapon
+O 0 6105 1 6105  Branch, unusable
+O 0 6106 4 6104  Toadstool 1.1
+O 0 6106 4 6111            1.2
+O 0 6106 4 6122            1.3
+O 0 6107 4 6119            2.1 (poisonous)
+S
+#69
+QUIFAEL-CUSTOM-ROOMS~
+6999 30 2
+* Backups & specials
+M 0 6001 1 6900  Backup rabbit
+M 0 6003 1 6900  Ferocious rabbit
+M 0 6900 1 6900  Computer bug
+O 0 6900 1 6902  Global optimizer
+O 0 6950 1 6902  Coffee machine
+P 0 6951 3 6950    Coffee cup
+M 0 6910 1 6900  Isha the Dark Elf
+E 1 6910 1 5     Dragon scale shirt   Equipped (BODY)
+E 1 6911 1 7     Dragon scale skirt Equipped (LEGS)
+E 1 6912 1 3       Black cloak  Equipped (NECK_1)
+E 1 6913 1 13      Silver belt  Equipped (WAISTE)
+E 1 6914 1 16      Long, slender sword   Equipped (WIELD)
+M 0 6999 1 6999  Death
+E 1 6999 1 16      Scythe Equipped (WIELD)
+S
+#70
+Sewer~
+7099 15 2
+M 0 7001 9 7041            The mean bat
+M 0 7001 9 7025            The mean bat
+M 0 7001 9 7004            The mean bat
+M 0 7001 9 7004            The mean bat
+M 0 7002 3 7049             The Sewer Rat
+M 0 7002 3 7031             The Sewer Rat
+M 0 7003 8 7039           The Small Hairy Spider
+M 0 7003 8 7039           The Small Hairy Spider
+M 0 7003 8 7039           The Small Hairy Spider
+M 0 7003 8 7037           The Small Hairy Spider
+M 0 7003 8 7037           The Small Hairy Spider
+M 0 7003 8 7050           The Small Hairy Spider
+S
+#71
+SecondSewer~
+7199 20 2
+M 0 7004 3 7102            The Earth Beetle
+M 0 7005 7 7112            The Giant Maggot
+M 0 7005 7 7112            The Giant Maggot
+M 0 7005 7 7122            The Giant Maggot
+M 0 7002 7 7104             The Sewer Rat
+M 0 7000 3 7103            The Horrifying Mudmonster
+M 0 7000 3 7103            The Horrifying Mudmonster
+M 0 7006 7 7113            The slithering snake
+M 0 7006 7 7122            The slithering snake
+M 0 7006 7 7122            The slithering snake
+D 1 7116 5 1
+D 1 7280 4 1
+S
+#72
+SEWERMAZE~
+7399 25 2
+* The lair
+D 0 7201 3 2     Lock stone door
+D 0 7201 2 1     Close wood door
+D 0 7202 0 1     Close wood door
+D 0 7208 0 1     Close door
+*
+M 0 7200 1 7201  Load master mindflayer
+E 1 7200 4 16      Equip master with devil rod
+E 1 7203 4 3     Equip master with cloak 
+G 1 7205 7200    Give key to master
+O 1 7204 6 7200  Potion into treasury
+O 1 7210 1 7200  Treasure into treasury
+M 0 7201 1 7203  Load senior mindflayer
+E 1 7201 4 16 Equip with large mace
+M 0 7202 2 7205  Junior mindflayer
+E 1 7202 8 16 Equip with large mace
+M 0 7202 2 7207  Load junior mindflayer
+E 1 7202 8 16 Equip with small mace
+O 0 7206 4 7206  Load Skull
+* The sewermaze
+O 0 7208 20 7211 Load light stick
+O 0 7208 20 7218        "
+O 0 7208 20 7230	"
+O 0 7209 4 7214  Load MUD-boots
+M 0 7203 10 7214 Load wererat
+E 1 7211 16 16 Equip with short sword
+M 0 7203 10 7213 Load wererat
+E 1 7211 16 16 Equip with short sword
+M 0 7203 10 7215 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7217 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7219 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7221 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7223 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7225 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7233 Load wererat
+E 1 7211 16 16 Equip
+M 0 7203 10 7233 Load wererat
+E 1 7211 16 16 Equip
+M 0 7204 1 7234  Load gigantic rat
+* The small Hell
+D 0 7280 4 1               Close Secret entrance
+D 0 7116 5 1                ------- || ------- 
+M 0 7002 5 7285             The Sewer Rat
+E 1 7190 2 2           Equip rat with ring
+M 0 7002 5 7285             The Sewer Rat
+M 0 7000 8 7286            The Horrifying Mudmonster
+M 0 7000 8 7286            The Horrifying Mudmonster
+M 0 7000 8 7281            The Horrifying Mudmonster
+M 0 7000 8 7281            The Horrifying Mudmonster
+M 0 7000 8 7280            The Horrifying Mudmonster
+D 1 7116 5 1
+D 1 7280 4 1
+S
+#74
+The tunnels~
+7899 25 2
+D 0 7415 0 1
+D 0 7416 2 1
+D 0 7418 1 1
+D 0 7421 3 1
+D 0 7424 1 1
+D 0 7425 3 1
+D 0 7405 2 1
+D 0 7406 0 1
+D 0 7404 2 1
+D 0 7405 0 1
+M 0 7040 1 7428          Load The Red Dragon
+M 0 7041 2 7444          Load The Sea Hag
+M 0 7042 2 7435          Load The Good Guardian Naga
+M 0 7043 3 7439          Load The Basilisk
+M 0 7044 6 7406          Load The Lemure Blob
+M 0 7045 1 7419          Load Jones
+M 0 7046 1 7424          Load Herald
+M 0 7010 2 7429          Load Chr "something"
+S
+#79
+Redferne's Residence~
+7999 30 2
+D 0 7900 0 2
+D 0 7901 2 2
+D 0 7902 1 1
+D 0 7901 3 1
+D 0 7901 1 1
+D 0 7910 3 1
+D 0 7910 1 2
+D 0 7903 3 2
+D 0 7904 1 1
+D 0 7913 3 1
+D 0 7911 2 1
+D 0 7912 0 1
+D 0 7904 3 1
+D 0 7905 1 1
+D 0 7906 1 1
+D 0 7908 3 1
+D 0 7906 0 1
+D 0 7907 2 1
+M 0 7009 1 7900         The Grand Knight of Paladins
+E 1 7212 1 16          Equip sword on Knight
+E 1 7217 1 5           Equip Breast-Plate on Knight
+E 1 7218 1 7           Equip Leg-plates on Knight
+E 1 7219 1 9           Equip Gloves on Knight
+E 1 7220 1 6           Equip Helmet on Knight
+E 1 7221 1 11          Equip Shield on Knight
+E 1 7223 1 10          Equip arm guards on Knight
+E 1 7222 1 8           Equip Heavy Boots on Knight
+G 1 7911 1               Give key to chest to the knight
+O 0 7090 40 7907           The Waybread
+O 0 7090 40 7907           The Waybread
+O 0 7090 40 7907           The Waybread
+O 0 7090 40 7907           The Waybread
+O 0 7090 40 7907           The Waybread
+O 0 6013 10 7908           The barrel with water
+O 0 6013 10 7908           The barrel with water
+O 0 6013 10 7908           The barrel with water
+O 0 6013 10 7908           The barrel with water
+O 0 6013 10 7908           The barrel with water
+O 0 6013 10 7908           The barrel with water
+O 0 7910 1 7910           Load chest
+P 1 7190 2 7910           The Silver Ring
+P 1 7191 1 7910           The (Invisible) Golden Ring
+P 1 7207 1 7910           Muddy gauntlets
+P 1 7208 6 7910         Light stick
+O 0 7909 10 7903         MONEY
+O 0 7212 2 7903          Bastard sword
+O 0 7215 2 7903          Light sabre
+O 0 7216 2 7903         Two-handed sword
+S
+#80
+Main matrix~
+8099 10 2
+M 0 8000 1 8020		the Shredder
+M 0 8001 10 8010	the Bugs
+M 0 8001 10 8012	..
+M 0 8001 10 8013	.
+M 0 8001 10 8022
+M 0 8001 10 8023
+M 0 8001 10 8032
+M 0 8001 10 8033
+M 0 8001 10 8044
+M 0 8001 10 8052
+M 0 8001 10 8082
+M 0 8005 2 8014		Cursors
+M 0 8005 2 8050
+M 0 8006 2 8043		Juggernauts
+M 0 8006 2 8051
+M 0 8008 7 8000		Butterflies
+M 0 8008 7 8002		..
+M 0 8008 7 8021		.
+M 0 8008 7 8054
+M 0 8008 7 8061
+M 0 8008 7 8072
+M 0 8008 7 8080
+O 0 8900 2 8052		Construction signs
+O 0 8900 2 8061
+O 0 8901 4 8053		Posters
+O 0 8901 4 8072		.
+O 0 8901 4 8082
+O 0 8901 4 8083
+M 0 8010 3 8053		a Cowboy
+G 1 8121 5			     his Satchel..
+P 1 8102 10 8121     (with some stuff)
+E 1 8120 3 16        and his Whip.
+D 0 8045 5 1		close trapdoor
+D 0 8071 3 1		close tower
+S
+#81
+Main_matrix_auxiliary~
+8999 5 1
+M 0 8003 1 8150		the Daemon
+G 1 8100 1          give ..
+D 0 8150 4 1			Close door
+O 0 8101 2 8150			dirty dishes
+O 1 8101 2 8150	
+O 0 8102 3 8104		S FX progs
+O 1 8102 3 8104
+M 0 8001 2 8101		Bugs
+G 1 8102 3			(1 w prg)
+M 0 8001 2 8101
+O 0 8113 2 8102		bones
+O 0 8113 2 8103
+D 0 8112 2 1		closer pyramid door
+S
+#82
+$~

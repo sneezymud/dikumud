@@ -57,7 +57,7 @@ int top_of_helpt;                     /* top of help index table         */
 struct time_info_data time_info;	/* the infomation about the time   */
 struct weather_data weather_info;	/* the infomation about the weather */
 
-
+bool wizlock = FALSE;                 /* is the game wizlocked           */
 
 
 /* local procedures */
@@ -1867,7 +1867,7 @@ void save_char(struct char_data *ch, sh_int load_room)
 
 	if (expand = (ch->desc->pos > top_of_p_file))
 	{
-		strcpy(mode, "a");
+		strcpy(mode, "a+");
 		top_of_p_file++;
 	}
 	else
@@ -1884,8 +1884,13 @@ void save_char(struct char_data *ch, sh_int load_room)
 		exit(1);
 	}
 
-	if (!expand)
-		fseek(fl, ch->desc->pos * sizeof(struct char_file_u), 0);
+  	fflush(fl);
+   if (expand)
+   {
+   	fwrite(&st, sizeof(struct char_file_u), 1, fl);
+	}
+
+	fseek(fl, ch->desc->pos * sizeof(struct char_file_u), 0);
 
 	fwrite(&st, sizeof(struct char_file_u), 1, fl);
 

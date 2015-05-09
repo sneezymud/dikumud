@@ -31,7 +31,8 @@ while 1
  endif
 
  if ($tmp == 52) then
-	@ max = ($max + 1)
+	set counter=0
+	mv syslog syslog.old
  endif
 
 echo "Nightrun ($user) restarting game at `date`." >> runlog

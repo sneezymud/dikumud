@@ -387,9 +387,11 @@ struct room_data
 #define PLR_BRIEF        1
 #define PLR_NOSHOUT      2
 #define PLR_COMPACT      4
-#define PLR_DONTSET      8   /* Dont EVER set */
-
-
+#define PLR_DONTSET      8 /* Dont EVER set */
+#define PLR_NOTELL      16
+#define PLR_NOEMOTE     32
+#define PLR_LOG         64 /* log activities of this player. */
+#define PLR_FREEZE     128 /* No commands available */
 
 /* This structure is purely intended to be an easy way to transfer */
 /* and return information about time (real or mudwise).            */
@@ -419,7 +421,8 @@ struct char_player_data
 	byte level;         /* PC / NPC s level                     */
 	int hometown;       /* PC s Hometown (zone)                 */
 	bool talks[MAX_TOUNGE]; /* PC s Tounges 0 for NPC           */
- 	struct time_data time; /* PC s AGE in days                 */
+ 	struct time_data time; /* PC s AGE in days                  */
+	struct time_data tmptime; /* PC s AGE in days, modified     */
 	ubyte weight;       /* PC / NPC s weight                    */
 	ubyte height;       /* PC / NPC s height                    */
 };

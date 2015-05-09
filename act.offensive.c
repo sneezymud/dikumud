@@ -18,13 +18,12 @@
 
 /* extern variables */
 
-extern struct room_data *world;
 extern struct descriptor_data *descriptor_list;
 extern struct room_data *world;
 
 
 void raw_kill(struct char_data *ch);
-
+void stop_follower(struct char_data *ch);
 
 void do_hit(struct char_data *ch, char *argument, int cmd)
 {
@@ -175,6 +174,18 @@ void do_order(struct char_data *ch, char *argument, int cmd)
 			if ( (victim->master!=ch) || !IS_AFFECTED(victim, AFF_CHARM) )
 				act("$n has an indifferent look.", FALSE, victim, 0, 0, TO_ROOM);
 			else {
+				if (saves_spell(victim,SAVING_SPELL)) {
+					if (saves_spell(victim,SAVING_SPELL)&&
+						 saves_spell(victim,SAVING_SPELL)&&
+						 saves_spell(victim,SAVING_SPELL)) {
+						/* make it easyer to use charmn */
+						stop_follower(victim);
+						if (IS_NPC(victim))
+							hit(victim,ch);
+					} else {
+						act("$n has an indifferent look.", FALSE, victim, 0, 0, TO_ROOM);
+					}
+				}
 				send_to_char("Ok.\n\r", ch);
 				command_interpreter(victim, message);
 			}
@@ -188,6 +199,18 @@ void do_order(struct char_data *ch, char *argument, int cmd)
 				if (org_room == k->follower->in_room)
 					if (IS_AFFECTED(k->follower, AFF_CHARM)) {
 						found = TRUE;
+						if (saves_spell(victim,SAVING_SPELL)) {
+							if (saves_spell(victim,SAVING_SPELL)&&
+							    saves_spell(victim,SAVING_SPELL)&&
+							    saves_spell(victim,SAVING_SPELL)) {
+								/* make it easyer to use charmn */
+								stop_follower(victim);
+								if (IS_NPC(victim))
+								hit(victim,ch);
+								} else {
+									act("$n has an indifferent look.", FALSE, victim, 0, 0, TO_ROOM);
+								}
+						}
 						command_interpreter(k->follower, message);
 					}
 			}
@@ -217,6 +240,7 @@ void do_flee(struct char_data *ch, char *argument, int cmd)
 				if ((die = do_simple_move(ch, attempt, FALSE))== 1) {
 					/* The escape has succeded */
 					send_to_char("You flee head over heels.\n\r", ch);
+					return;
 				} else {
 					if (!die) act("$n tries to flee, but is too exhausted!", TRUE, ch, 0, 0, TO_ROOM);
 					return;

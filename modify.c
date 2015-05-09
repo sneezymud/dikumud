@@ -4,7 +4,7 @@
 *  Copyright (C) 1990, 1991 - see 'license.doc' for complete information. *
 ************************************************************************ */
 
-
+#include <signal.h>
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -59,22 +59,11 @@ int length[] =
 char *skill_fields[] = 
 {
 	"learned",
-	"affected",
-	"duration",
 	"recognize",
 	"\n"
 };
 
 
-
-
-int max_value[] =
-{
-	255,
-	255,
-	10000,
-	1
-};
 
 /* ************************************************************************
 *  modification of malloc'ed strings                                      *
@@ -384,115 +373,6 @@ void do_string(struct char_data *ch, char *arg, int cmd)
 
 
 
-/* **********************************************************************
-*  Modification of character skills                                     *
-********************************************************************** */
-
-
-void do_setskill(struct char_data *ch, char *arg, int cmd)
-{
-	struct char_data *vict;
-	char name[100], num[100], buf[100], help[MAX_STRING_LENGTH];
-	int skill, field, value, i;
-	static char *skills[] = 
-	{
-		"search", "frighten", "telepath", "detect-evil",
-		"sense-life", "cure", "bless", "remove",
-		"poison", "blind", "neutralize", "purify",
-		"hide", "cover", "backstab", "detect-invisible",
-		"detect-magic", "enchant", "teleport", "create",
-		"sanctuary", "resist", "drain", "turn",
-		"protect", "light", "charm", "floating",
-		"lightning-bolt", "sleep", "wake", "paralysis",
-		"recharge", "shield", "fireball", "knock",
-		"ventricolism", "double", "invisible", "death-ray",
-		"bash", "dodge", "kick", "uppercut",
-		"defend", "dirk", "listen", "missile", "detect", "\n"
-	};
-
-	send_to_char("This routine is disabled untill it fitts\n\r", ch);
-	send_to_char("The new structures (sorry Quinn) ....Bombman\n\r", ch);
-	return;
-
-	arg = one_argument(arg, name);
-	if (!*name) /* no arguments. print an informative text */
-	{
-		send_to_char("Syntax:\n\rsetskill <name> <skill> <field> <value>\n\r",
-		   ch);
-		strcpy(help, "Skill being one of the following:\n\r\n\r");
-		for (i = 1; *skills[i] != '\n'; i++)
-		{
-			sprintf(help + strlen(help), "%18s", skills[i]);
-			if (!(i % 4))
-			{
-				strcat(help, "\n\r");
-				send_to_char(help, ch);
-				*help = '\0';
-			}
-		}
-		if (*help)
-			send_to_char(help, ch);
-		return;
-	}
-	if (!(vict = get_char_vis(ch, name)))
-	{
-		send_to_char("No living thing by that name.\n\r", ch);
-		return;
-	}
-	arg = one_argument(arg, buf);
-	if (!*buf)
-	{
-		send_to_char("Skill name expected.\n\r", ch);
-		return;
-	}
-	if ((skill = old_search_block(buf, 0, strlen(buf), skills, 1)) < 0)
-	{
-		send_to_char("No such skill is known. Try 'setskill' for list.\n\r", ch);
-		return;
-	}
-	argument_interpreter(arg, buf, num);
-	if (!*num || !*buf)
-	{
-		send_to_char("Field name or value undefined.\n\r", ch);
-		return;
-	}
-	if ((field = old_search_block(buf, 0, strlen(buf), skill_fields, 0)) < 0)
-	{
-		send_to_char("Unrecognized field.\n\r", ch);
-		return;
-	}
-	value = atoi(num);
-	if (field == 3)
-	{
-		if (value < -1)
-		{
-			send_to_char("Minimum value for that is -1.\n\r", ch);
-			return;
-		}
-	}
-	else
-		if (value < 0)
-		{
-			send_to_char("Minimum value for that is 0.\n\r", ch);
-			return;
-		}
-	if (value > max_value[field - 1])
-	{
-		sprintf(buf, "Max value for that is %d.\n\r", max_value[field - 1]);
-		send_to_char(buf, ch);
-		return;
-	}
-
-	switch (field)
-	{
-		case 1: vict->skills[skill].learned = value; break;
-		/* case 2: vict->skills[skill].affected_by = value; break; */
-		/* case 3: vict->skills[skill].duration = value; break;    */
-		case 4: vict->skills[skill].recognise = value; break;
-	}
-
-	send_to_char("Ok.\n\r", ch);
-}
 
 
 
@@ -699,7 +579,7 @@ void night_watchman(void)
 			send_to_all("Warning: The game will close in 20 minutes.\n\r");
 }
 
-
+	
 void check_reboot(void)
 {
 	long tc;
@@ -722,16 +602,25 @@ void check_reboot(void)
 				if (!feof(boot))   /* the file is nonepty */
 				{
 					log("Reboot is nonempty.");
+
+					/* the script can't handle the signals */
+					sigsetmask(sigmask(SIGUSR1) | sigmask(SIGUSR2) |
+					sigmask(SIGINT) |	sigmask(SIGPIPE) | sigmask(SIGALRM) |
+					sigmask(SIGTERM) | sigmask(SIGURG) | sigmask(SIGXCPU) |
+					sigmask(SIGHUP) |	sigmask(SIGVTALRM));
+
 					if (system("./reboot"))
 					{
 						log("Reboot script terminated abnormally");
 						send_to_all("The reboot was cancelled.\n\r");
 						system("mv ./reboot reboot.FAILED");
 						fclose(boot);
+						sigsetmask(0);
 						return;
 					}
 					else
 						system("mv ./reboot reboot.SUCCEEDED");
+					sigsetmask(0);
 				}
 
 				send_to_all("Automatic reboot. Come back in a little while.\n\r");
@@ -840,7 +729,7 @@ char *nogames(void)
 	if (fl = fopen("lib/nogames", "r"))
 	{
 		log("/usr/games/nogames exists");
-		fgets(text,200,fl);
+		fgets(text, fl);
 		return(text);
 		fclose(fl);
 	}

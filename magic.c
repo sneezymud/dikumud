@@ -240,7 +240,7 @@ void spell_earthquake(byte level, struct char_data *ch,
 	dam =  dice(1,8)+level;
 
   send_to_char("The earth trembles beneath your feet!\n\r", ch);
-  act("$n makes the earth tremble and shiver\n\rYou fall, and hit yourself!",
+  act("$n makes the earth trembles and shivers\n\rYou fall, and hit yourself!",
 	  FALSE, ch, 0, 0, TO_ROOM);
 
 
@@ -251,7 +251,7 @@ void spell_earthquake(byte level, struct char_data *ch,
 			damage(ch, tmp_victim, dam, SPELL_EARTHQUAKE);
     } else
       if (world[ch->in_room].zone == world[tmp_victim->in_room].zone)
-        send_to_char("The earth trembles and shiver", tmp_victim);
+        send_to_char("The earth trembles and shivers\n\r", tmp_victim);
   }
 
 }
@@ -866,7 +866,7 @@ void spell_locate_object(byte level, struct char_data *ch,
         send_to_char(buf,ch);
       } else {
         sprintf(buf,"%s in %s.\n\r",i->short_description,
-          (i->in_room == NOWHERE ? "Used but uncertain." : world[i->in_room].name));
+          (i->in_room == NOWHERE ? "use, but uncertain." : world[i->in_room].name));
         send_to_char(buf,ch);
       j--;
       }
@@ -1108,7 +1108,8 @@ void spell_summon(byte level, struct char_data *ch,
 		return;
 	}
 
-  if (IS_NPC(victim) && saves_spell(victim, SAVING_SPELL) ) {
+  if ((IS_NPC(victim) && saves_spell(victim, SAVING_SPELL)) ||
+      IS_SET(world[victim->in_room].room_flags,PRIVATE)) {
 		send_to_char("You failed.\n\r", ch);
 		return;
 	}
@@ -1378,11 +1379,11 @@ void spell_fire_breath(byte level, struct char_data *ch,
 		if (!saves_spell(victim, SAVING_BREATH) )
 		{
 			for(burn=victim->carrying ; 
-				burn && (burn->obj_flags.type_flag!=ITEM_SCROLL) && 
-				(burn->obj_flags.type_flag!=ITEM_WAND) &&
-				(burn->obj_flags.type_flag!=ITEM_STAFF) &&
-				(burn->obj_flags.type_flag!=ITEM_NOTE) &&
-            (number(0,2)==0) ;
+				burn && !(((burn->obj_flags.type_flag==ITEM_SCROLL) || 
+				(burn->obj_flags.type_flag==ITEM_WAND) ||
+				(burn->obj_flags.type_flag==ITEM_STAFF) ||
+				(burn->obj_flags.type_flag==ITEM_NOTE)) &&
+            (number(0,2)==0)) ;
 				 burn=burn->next_content);
 			if(burn)
 			{
@@ -1421,10 +1422,10 @@ void spell_frost_breath(byte level, struct char_data *ch,
 		if (!saves_spell(victim, SAVING_BREATH) )
 		{
 			for(frozen=victim->carrying ; 
-				frozen && (frozen->obj_flags.type_flag!=ITEM_DRINKCON) && 
-				(frozen->obj_flags.type_flag!=ITEM_FOOD) &&
-				(frozen->obj_flags.type_flag!=ITEM_POTION) &&
-            (number(0,2)==0) ;
+				frozen && !(((frozen->obj_flags.type_flag==ITEM_DRINKCON) || 
+				(frozen->obj_flags.type_flag==ITEM_FOOD) ||
+				(frozen->obj_flags.type_flag==ITEM_POTION)) &&
+            (number(0,2)==0)) ;
 				 frozen=frozen->next_content); 
 			if(frozen)
 			{
@@ -1465,17 +1466,17 @@ void spell_acid_breath(byte level, struct char_data *ch,
 		if (!saves_spell(victim, SAVING_BREATH) )
 		{
 			for(damaged = 0; damaged<MAX_WEAR &&
-				(victim->equipment[damaged]) &&
+				!((victim->equipment[damaged]) &&
 				(victim->equipment[damaged]->obj_flags.type_flag!=ITEM_ARMOR) &&
 				(victim->equipment[damaged]->obj_flags.value[0]>0) && 
-            (number(0,2)==0) ; damaged++);  
+            (number(0,2)==0)) ; damaged++);  
 			if(damaged<MAX_WEAR)
 			{
 				act("$o is damaged.",0,victim,victim->equipment[damaged],0,TO_CHAR);
 				GET_AC(victim)-=apply_ac(victim,damaged);
-				ch->equipment[damaged]->obj_flags.value[0]-=number(1,7);
+				victim->equipment[damaged]->obj_flags.value[0]-=number(1,7);
 				GET_AC(victim)+=apply_ac(victim,damaged);
-				ch->equipment[damaged]->obj_flags.cost = 0;
+				victim->equipment[damaged]->obj_flags.cost = 0;
 			}
 		}
 	}

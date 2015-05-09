@@ -7,11 +7,11 @@
 #include "comm.h"
 
 
-#define MAX_MSGS 30	               /* Max number of messages.          */
+#define MAX_MSGS 50	               /* Max number of messages.          */
 #define SAVE_FILE "board.messages"	/* Name of file for saving messages */
 #define BOARD_OBJECT  xxx           /* what are we?                     */
 #define BOARD_ROOM    xxx           /* where are we?                    */
-#define MAX_MESSAGE_LENGTH 2048     /* that should be enough            */
+#define MAX_MESSAGE_LENGTH 4000     /* that should be enough            */
 
 char *msgs[MAX_MSGS];
 char *head[MAX_MSGS];

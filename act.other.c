@@ -161,8 +161,12 @@ void do_steal(struct char_data *ch, char *argument, int cmd)
 	  return;
 	}
 
+	WAIT_STATE(ch, 10); /* It takes TIME to steal */
+
 	/* 101% is a complete failure */
 	percent=number(1,101) - dex_app_skill[GET_DEX(ch)].p_pocket;
+
+   percent += AWAKE(victim) ? 10 : -50;
 
 	if (GET_POS(victim) < POSITION_SLEEPING)
 		percent = -1; /* ALWAYS SUCCESS */
@@ -199,7 +203,7 @@ void do_steal(struct char_data *ch, char *argument, int cmd)
 
 			percent += GET_OBJ_WEIGHT(obj); /* Make heavy harder */
 
-			if (AWAKE(victim) && (percent > ch->skills[SKILL_STEAL].learned)) {
+			if (percent > ch->skills[SKILL_STEAL].learned) {
 				ohoh = TRUE;
 				act("Oops..", FALSE, ch,0,0,TO_CHAR);
 				act("$n tried to steal something from you!",FALSE,ch,0,victim,TO_VICT);
@@ -216,7 +220,7 @@ void do_steal(struct char_data *ch, char *argument, int cmd)
 			}
 		}
 	} else { /* Steal some coins */
-		if (AWAKE(victim) && (percent > ch->skills[SKILL_STEAL].learned)) {
+		if (percent > ch->skills[SKILL_STEAL].learned) {
 			ohoh = TRUE;
 			act("Oops..", FALSE, ch,0,0,TO_CHAR);
 			act("You discover that $n has $s hands in your wallet.",FALSE,ch,0,victim,TO_VICT);

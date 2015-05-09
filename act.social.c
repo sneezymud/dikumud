@@ -64,8 +64,6 @@ struct pose_type
 static int list_top = -1;
 
 
-
-
 char *fread_action(FILE *fl)
 {
 	char buf[MAX_STRING_LENGTH], *rslt;
@@ -323,13 +321,11 @@ void boot_pose_messages(void)
 	fclose(fl);
 }
 
+
 do_pose(struct char_data *ch, char *argument, int cmd)
 {
 	byte to_pose;
 	byte counter;
-
-	send_to_char("Sorry Buggy command.\n\r", ch);
-	return;
 
 	if ((GET_LEVEL(ch) < pose_messages[0].level) || IS_NPC(ch))
 	{
@@ -337,8 +333,8 @@ do_pose(struct char_data *ch, char *argument, int cmd)
 		return;
 	}
 
-	for (counter = 0; (pose_messages[counter].level < GET_LEVEL(ch)) && 
-                    (pose_messages[counter].level > 0); counter++);
+	for (counter = 0; (pose_messages[counter].level <= GET_LEVEL(ch)) && 
+                     (pose_messages[counter].level >= 0); counter++);
 	counter--;
   
 	to_pose = number(0, counter);

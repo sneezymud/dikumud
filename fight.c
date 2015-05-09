@@ -215,7 +215,8 @@ void make_corpse(struct char_data *ch)
 	corpse->short_description = strdup(buf);
 
 	corpse->contains = ch->carrying;
-	if(GET_GOLD(ch)>0)
+	if ( (GET_GOLD(ch)>0) &&
+        ( IS_NPC(ch) || (ch->desc) ) )
 	{
 		money = create_money(GET_GOLD(ch));
 		GET_GOLD(ch)=0;
@@ -225,7 +226,7 @@ void make_corpse(struct char_data *ch)
 	corpse->obj_flags.type_flag = ITEM_CONTAINER;
 	corpse->obj_flags.wear_flags = ITEM_TAKE;
 	corpse->obj_flags.value[0] = 0; /* You can't store stuff in a corpse */
-  corpse->obj_flags.value[3] = 1; /* corpse identifyer */
+	corpse->obj_flags.value[3] = 1; /* corpse identifyer */
 	corpse->obj_flags.weight = GET_WEIGHT(ch)+IS_CARRYING_W(ch);
 	corpse->obj_flags.cost_per_day = 100000;
 	if (IS_NPC(ch))
@@ -258,14 +259,14 @@ void change_alignment(struct char_data *ch, struct char_data *victim)
 
 	if ((align = GET_ALIGNMENT(ch)-GET_ALIGNMENT(victim)) > 0) {
 		if (align > 650)
-			GET_ALIGNMENT(ch) = MIN(1000,GET_ALIGNMENT(ch) + ((align-650) >> 3));
+			GET_ALIGNMENT(ch) = MIN(1000,GET_ALIGNMENT(ch) + ((align-650) / 4));
 		else
-			GET_ALIGNMENT(ch) >>= 1;
+			GET_ALIGNMENT(ch) /= 2;
 	} else {
 		if (align < -650)
-			GET_ALIGNMENT(ch) = MAX(-1000, GET_ALIGNMENT(ch) + ((align+650) >> 3));
+			GET_ALIGNMENT(ch) = MAX(-1000, GET_ALIGNMENT(ch) + ((align+650) / 4));
 		else
-			GET_ALIGNMENT(ch) >>= 1;
+			GET_ALIGNMENT(ch) /= 2;
 	}
 }
 
@@ -298,6 +299,7 @@ void raw_kill(struct char_data *ch)
 	death_cry(ch);
 
 	make_corpse(ch);
+	affect_total(ch); 
 	extract_char(ch);
 }
 

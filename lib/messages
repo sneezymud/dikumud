@@ -285,7 +285,7 @@ You are burned to ash, as $n breathes on you.~
 $n makes $N to ash.~
 $N missed.~
 $n breathes fire at you, but you avoids it.~
-SN avoids $n firebreath.~
+$N avoids $n firebreath.~
 $N hit.~
 $n burns you.~
 $N is partly made ash, as $n breaths fire.~
@@ -299,7 +299,7 @@ You die from the gas $n breathes on you.~
 $n kills $N with a gas breath.~
 $N missed.~
 $n breathes gas at you, but it has no effect.~
-SN avoids $n's gas.~
+$N avoids $n's gas.~
 $N hit.~
 $n gasses you.~
 $N is gassed by $n.~
@@ -313,7 +313,7 @@ You are frosen to ice, as $n breathes on you.~
 $n makes $N to ice.~
 $N missed.~
 $n breathes frost at you, but you avoids it.~
-SN avoids $n frostbreath.~
+$N avoids $n frostbreath.~
 $N hit.~
 $n frezes you.~
 $N is partly made ice, as $n breaths frost.~
@@ -327,7 +327,7 @@ You are corroded to nothing, as $n breathes on you.~
 $n corrodes $N to nothing.~
 $N missed.~
 $n breathes acid at you, but you avoids it.~
-SN avoids $n acidbreath.~
+$N avoids $n acidbreath.~
 $N hit.~
 $n corrodes you.~
 $N is corroded as $n breaths acid.~
@@ -341,7 +341,7 @@ You are killed by $n lightning breath.~
 $n killes $N with a lightning breath.~
 $N missed.~
 $n breathes lightning at you, but you avoids it.~
-SN avoids $n lightning breath.~
+$N avoids $n lightning breath.~
 $N hit.~
 $n hits you with a lightning breath.~
 $N is hit by $n's lightning breath.~

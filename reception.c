@@ -203,8 +203,12 @@ void load_char_objs(struct char_data *ch)
 	if (found) {
 
 		obj_store_to_char(ch, &st);
-		
-		timegold = (int) ((st.total_cost*(time(0) - st.last_update)) / (SECS_PER_REAL_DAY));
+
+		/* To avoid overflow of int */
+
+		timegold =
+       (unsigned) (((float) st.total_cost*(float) (time(0) - st.last_update))
+                  / (float) (SECS_PER_REAL_DAY));
 
 		GET_GOLD(ch) -= timegold;
 

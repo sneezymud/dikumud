@@ -737,6 +737,10 @@ void do_score(struct char_data *ch, char *argument, int cmd)
 
 	if (GET_COND(ch,DRUNK)>10)
 		send_to_char("You are intoxicated.\n\r", ch);
+	if (!GET_COND(ch,THIRST))
+		send_to_char("You are thirsty.\n\r", ch);
+	if (!GET_COND(ch,FULL))
+		send_to_char("You are hungry.\n\r", ch);
 
 	sprintf(buf, 
 		"You have %d(%d) hit, %d(%d) mana and %d(%d) movement points.\n\r",
@@ -949,7 +953,7 @@ do_wizhelp(struct char_data *ch, char *argument, int cmd)
 
 	for (no = 1, i = 0; *command[i] != '\n'; i++)
 		if ((GET_LEVEL(ch) >= cmd_info[i+1].minimum_level) &&
-			(cmd_info[i+1].minimum_level >= 21))
+			(cmd_info[i+1].minimum_level >= 21) && (i != 217))
 		{
 
 			sprintf(buf + strlen(buf), "%-10s", command[i]);
@@ -972,10 +976,11 @@ void do_who(struct char_data *ch, char *argument, int cmd)
 	send_to_char("Players\n\r-------\n\r", ch);
 	for (d = descriptor_list; d; d = d->next)
 	{
-		if (!d->connected && CAN_SEE(ch, d->character))
+		if ((!d->connected) &&
+		    (CAN_SEE(ch, d->character) || (GET_LEVEL(ch) >= 23)))
 		{
 
-			if(d->original) /* If switched */			
+			if(d->original) /* If switched */
 				sprintf(buf, "%s %s\n\r", 
 				   GET_NAME(d->original),
 				  	d->original->player.title);
@@ -983,7 +988,7 @@ void do_who(struct char_data *ch, char *argument, int cmd)
 				sprintf(buf, "%s %s\n\r", 
 				   GET_NAME(d->character),
 				   d->character->player.title);
-	
+
 		send_to_char(buf, ch);
 		}
 	}
@@ -1011,7 +1016,7 @@ void do_users(struct char_data *ch, char *argument, int cmd)
 		}
 		else
 			strcpy(line, "UNDEFINED       : ");
-		if (d->host)
+		if ((d->host) && *(d->host))
 			sprintf(line + strlen(line), "[%s]\n\r", d->host);
 		else
 			strcat(line, "[Hostname unknown]\n\r");
@@ -1171,6 +1176,8 @@ void do_levels(struct char_data *ch, char *argument, int cmd)
 {
 	int i;
 	char buf[MAX_STRING_LENGTH];
+	char arg[MAX_INPUT_LENGTH];
+	int class;
 
 	extern const struct title_type titles[4][25];
 
@@ -1179,20 +1186,30 @@ void do_levels(struct char_data *ch, char *argument, int cmd)
 		send_to_char("You ain't nothin' but a hound-dog.\n\r", ch);
 		return;
 	}
+	class = GET_CLASS(ch);
+
+	one_argument(argument,arg);
+
+	if (*arg) {
+		if (!str_cmp(arg,"magic")) class = 1;
+		else if (!str_cmp(arg,"cleric")) class =  2;
+		else if (!str_cmp(arg,"thief")) class =  3;
+		else if (!str_cmp(arg,"fighter")) class = 4;
+	}
 
 	*buf = '\0';
 	
 	for (i = 1; i < 21; i++)
 	{
 		sprintf(buf + strlen(buf), "%7d-%-7d : ",
-			titles[GET_CLASS(ch) - 1][i].exp,
-			titles[GET_CLASS(ch) - 1][i + 1].exp);
+			titles[class - 1][i].exp,
+			titles[class - 1][i + 1].exp);
 		switch(GET_SEX(ch))
 		{
 			case SEX_MALE:
-				strcat(buf, titles[GET_CLASS(ch) - 1][i].title_m); break;
+				strcat(buf, titles[class - 1][i].title_m); break;
 			case SEX_FEMALE:
-				strcat(buf, titles[GET_CLASS(ch) - 1][i].title_f); break;
+				strcat(buf, titles[class - 1][i].title_f); break;
 			default:
 				send_to_char("Oh dear.\n\r", ch); break;
 		}

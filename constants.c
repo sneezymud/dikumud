@@ -566,6 +566,10 @@ const char *player_bits[] = {
 	"NOSHOUT",
 	"COMPACT",
 	"DONTSET",
+	"NOTELL",
+	"NOEMOTE",
+	"",
+	"FREEZE",
 	"\n"
 };
 

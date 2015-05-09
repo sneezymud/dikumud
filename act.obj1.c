@@ -144,11 +144,7 @@ void do_get(struct char_data *ch, char *argument, int cmd)
 					}
 				}
 			}
-			if (found) {
-				send_to_char("OK.\n\r", ch);
-			} else {
 				if (!fail) send_to_char("You see nothing here.\n\r", ch);
-			}
 		} break;
 		/* get ??? */
 		case 2:{
@@ -201,42 +197,47 @@ void do_get(struct char_data *ch, char *argument, int cmd)
 			}
 			if (sub_object) {
 				if (GET_ITEM_TYPE(sub_object) == ITEM_CONTAINER) {
-					for(obj_object = sub_object->contains;
-						obj_object;
-						obj_object = next_obj) {
-						next_obj = obj_object->next_content;
-						if (CAN_SEE_OBJ(ch,obj_object)) {
-							if ((IS_CARRYING_N(ch) + 1 < CAN_CARRY_N(ch))) {
-								if ((IS_CARRYING_W(ch) + obj_object->obj_flags.weight) < 
-									CAN_CARRY_W(ch)) {
-									if (CAN_WEAR(obj_object,ITEM_TAKE)) {
-										get(ch,obj_object,sub_object);
-										found = TRUE;
+					if (!IS_SET(sub_object->obj_flags.value[1], CONT_CLOSED)) {
+						for(obj_object = sub_object->contains;
+							obj_object;
+							obj_object = next_obj) {
+							next_obj = obj_object->next_content;
+							if (CAN_SEE_OBJ(ch,obj_object)) {
+								if ((IS_CARRYING_N(ch) + 1 < CAN_CARRY_N(ch))) {
+									if ((IS_CARRYING_W(ch) + obj_object->obj_flags.weight) < 
+										CAN_CARRY_W(ch)) {
+										if (CAN_WEAR(obj_object,ITEM_TAKE)) {
+											get(ch,obj_object,sub_object);
+											found = TRUE;
+										} else {
+											send_to_char("You can't take that\n\r", ch);
+											fail = TRUE;
+										}
 									} else {
-										send_to_char("You can't take that\n\r", ch);
+										sprintf(buffer,"%s : You can't carry that much weight.\n\r", 
+											fname(obj_object->name));
+										send_to_char(buffer, ch);
 										fail = TRUE;
 									}
 								} else {
-									sprintf(buffer,"%s : You can't carry that much weight.\n\r", 
+									sprintf(buffer,"%s : You can't carry that many items.\n\r", 
 										fname(obj_object->name));
 									send_to_char(buffer, ch);
 									fail = TRUE;
 								}
-							} else {
-								sprintf(buffer,"%s : You can't carry that many items.\n\r", 
-									fname(obj_object->name));
-								send_to_char(buffer, ch);
-								fail = TRUE;
 							}
 						}
-					}
-					if (!found && !fail) {
-						sprintf(buffer,"You do not see anything in the %s.\n\r", 
+						if (!found && !fail) {
+							sprintf(buffer,"You do not see anything in the %s.\n\r", 
 							fname(sub_object->name));
-						send_to_char(buffer, ch);
-						fail = TRUE;
+							send_to_char(buffer, ch);
+							fail = TRUE;
+						}
 					}
-				} else {
+					else { /* container closed */
+						send_to_char("It's closed.\n\r", ch);
+					}
+				}else {
 					sprintf(buffer,"The %s is not a container.\n\r",
 						fname(sub_object->name));
 					send_to_char(buffer, ch);
@@ -262,35 +263,40 @@ void do_get(struct char_data *ch, char *argument, int cmd)
 			}
 			if (sub_object) {
 				if (GET_ITEM_TYPE(sub_object) == ITEM_CONTAINER) {
-					obj_object = get_obj_in_list_vis(ch, arg1, sub_object->contains);
-					if (obj_object) {
-						if ((IS_CARRYING_N(ch) + 1 < CAN_CARRY_N(ch))) {
-							if ((IS_CARRYING_W(ch) + obj_object->obj_flags.weight) < 
-								CAN_CARRY_W(ch)) {
-								if (CAN_WEAR(obj_object,ITEM_TAKE)) {
-									get(ch,obj_object,sub_object);
-									found = TRUE;
+					if (!IS_SET(sub_object->obj_flags.value[1], CONT_CLOSED)) {
+						obj_object = get_obj_in_list_vis(ch, arg1, sub_object->contains);
+						if (obj_object) {
+							if ((IS_CARRYING_N(ch) + 1 < CAN_CARRY_N(ch))) {
+								if ((IS_CARRYING_W(ch) + obj_object->obj_flags.weight) < 
+									CAN_CARRY_W(ch)) {
+									if (CAN_WEAR(obj_object,ITEM_TAKE)) {
+										get(ch,obj_object,sub_object);
+										found = TRUE;
+									} else {
+										send_to_char("You can't take that\n\r", ch);
+										fail = TRUE;
+									}
 								} else {
-									send_to_char("You can't take that\n\r", ch);
+									sprintf(buffer,"%s : You can't carry that much weight.\n\r", 
+										fname(obj_object->name));
+									send_to_char(buffer, ch);
 									fail = TRUE;
 								}
 							} else {
-								sprintf(buffer,"%s : You can't carry that much weight.\n\r", 
+								sprintf(buffer,"%s : You can't carry that many items.\n\r", 
 									fname(obj_object->name));
 								send_to_char(buffer, ch);
 								fail = TRUE;
 							}
 						} else {
-							sprintf(buffer,"%s : You can't carry that many items.\n\r", 
-								fname(obj_object->name));
+							sprintf(buffer,"The %s does not contain the %s.\n\r", 
+								fname(sub_object->name), arg1);
 							send_to_char(buffer, ch);
 							fail = TRUE;
 						}
-					} else {
-						sprintf(buffer,"The %s does not contain the %s.\n\r", 
-							fname(sub_object->name), arg1);
-						send_to_char(buffer, ch);
-						fail = TRUE;
+					}
+					else {
+						send_to_char("It's closed.\n\r", ch);
 					}
 				} else {
 					sprintf(buffer,"The %s is not a container.\n\r", fname(sub_object->name));
@@ -440,7 +446,7 @@ void do_put(struct char_data *ch, char *argument, int cmd)
 									/* Dow we need obj_to_room???(sub_object,ch);    */
 								}
 	
-								act("$n puts $p in $P",TRUE, ch, obj_object, sub_object, TO_ROOM);
+								act("$n puts $p in $s $P",TRUE, ch, obj_object, sub_object, TO_ROOM);
 							} else {
 								send_to_char("It won't fit.\n\r", ch);
 							}
@@ -516,6 +522,10 @@ void do_give(struct char_data *ch, char *argument, int cmd)
 		act("$n gives some gold to $N.", 1, ch, 0, vict, TO_NOTVICT);
 		if (IS_NPC(ch) || (GET_LEVEL(ch) < 22))
 			GET_GOLD(ch)-=amount;
+		if ((GET_LEVEL(ch) > 20) && (!IS_NPC(ch)) && (!IS_NPC(vict))) {
+			sprintf(buf,"%s gives %s %d gold coins.",GET_NAME(ch),GET_NAME(vict),amount);
+			log(buf);
+		}
 		GET_GOLD(vict)+=amount;
 		return;
 	}

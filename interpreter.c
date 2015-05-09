@@ -88,7 +88,7 @@ void do_hit(struct char_data *ch, char *argument, int cmd);
 void do_string(struct char_data *ch, char *arg, int cmd);
 void do_give(struct char_data *ch, char *arg, int cmd);
 void do_stat(struct char_data *ch, char *arg, int cmd);
-void do_setskill(struct char_data *ch, char *arg, int cmd);
+void do_set(struct char_data *ch, char *arg, int cmd);
 void do_time(struct char_data *ch, char *arg, int cmd);
 void do_weather(struct char_data *ch, char *arg, int cmd);
 void do_load(struct char_data *ch, char *arg, int cmd);
@@ -150,6 +150,12 @@ void do_noshout(struct char_data *ch, char *argument, int cmd);
 void do_wizhelp(struct char_data *ch, char *argument, int cmd);
 void do_credits(struct char_data *ch, char *argument, int cmd);
 void do_compact(struct char_data *ch, char *argument, int cmd);
+void do_wizlock(struct char_data *ch, char *argument, int cmd);
+void do_notell(struct char_data *ch, char *argument, int cmd);
+void do_noemote(struct char_data *ch, char *argument, int cmd);
+void do_freeze(struct char_data *ch, char *arg, int cmd);
+void do_log(struct char_data *ch, char *arg, int cmd);
+void do_wiz(struct char_data *ch, char *argument, int cmd);
 
 void do_action(struct char_data *ch, char *arg, int cmd);
 void do_practice(struct char_data *ch, char *arg, int cmd);
@@ -230,7 +236,7 @@ char *command[]=
   "give",
   "quit",
   "stat",
-  "setskill",
+  "set",
   "time",
   "load",
   "purge",
@@ -355,7 +361,7 @@ char *command[]=
   "worship",
   "yodel",
   "brief",
-  "wizlist",
+  "wiz",
   "consider",    /* 201 */
   "group",
   "restore",
@@ -369,6 +375,13 @@ char *command[]=
 	"wizhelp",   /* 211 */
 	"credits",
 	"compact",
+	"wizlock",
+	"notell",
+	"noemote",   /* 215 */
+	"freeze",
+	"gol",
+	"wizlist",
+	";",
   "\n"
 };
 
@@ -503,6 +516,11 @@ void command_interpreter(struct char_data *ch, char *argument)
 			}
 		else
 		{
+			if (IS_SET(ch->specials.act, PLR_FREEZE) && !IS_NPC(ch)) {
+				send_to_char("You're totally frozen!\n\r",ch);
+				return;
+			}
+
 			if (!no_specials && special(ch, cmd, argument + begin + look_at))
 				return;  
 
@@ -794,7 +812,7 @@ void assign_command_pointers ( void )
 	COMMANDO(72,POSITION_RESTING,do_give,0);
 	COMMANDO(73,POSITION_DEAD,do_quit,0);
 	COMMANDO(74,POSITION_DEAD,do_stat,21);
-	COMMANDO(75,POSITION_SLEEPING,do_setskill,22);
+	COMMANDO(75,POSITION_SLEEPING,do_set,23);
 	COMMANDO(76,POSITION_DEAD,do_time,0);
 	COMMANDO(77,POSITION_DEAD,do_load,22);
 	COMMANDO(78,POSITION_DEAD,do_purge,22);
@@ -919,7 +937,7 @@ void assign_command_pointers ( void )
 	COMMANDO(197,POSITION_RESTING,do_action,0);
 	COMMANDO(198,POSITION_RESTING,do_action,0);
 	COMMANDO(199,POSITION_DEAD,do_brief,0);
-	COMMANDO(200,POSITION_DEAD,do_wizlist,0);
+	COMMANDO(200,POSITION_DEAD,do_wiz,21);
 	COMMANDO(201,POSITION_RESTING,do_consider,0);
 	COMMANDO(202,POSITION_RESTING,do_group,1);
 	COMMANDO(203,POSITION_DEAD,do_restore,22);
@@ -933,6 +951,14 @@ void assign_command_pointers ( void )
 	COMMANDO(211,POSITION_SLEEPING,do_wizhelp,21);
 	COMMANDO(212,POSITION_DEAD,do_credits,0);
 	COMMANDO(213,POSITION_DEAD,do_compact,0);
+	COMMANDO(214,POSITION_DEAD,do_wizlock,24);
+	COMMANDO(215,POSITION_DEAD,do_notell,22);
+	COMMANDO(216,POSITION_DEAD,do_noemote,22);
+	COMMANDO(217,POSITION_DEAD,do_freeze,23);
+	COMMANDO(218,POSITION_DEAD,do_log,24);
+	COMMANDO(219,POSITION_DEAD,do_wizlist,0);
+	COMMANDO(220,POSITION_DEAD,do_wiz,21);
+
 }
 
 /* *************************************************************************
@@ -1254,21 +1280,7 @@ void nanny(struct descriptor_data *d, char *arg)
 					SEND_TO_Q("\n\r\n*** PRESS RETURN: ", d);
 					STATE(d) = CON_RMOTD;
 				} break;
-				case 'i' :    /* this has been disengaged for security reasons */
-				case 'I' : {
-					if (!str_cmp(arg,"Disengaged")){
-						GET_EXP(d->character) = 7000000;
-						GET_LEVEL(d->character) = 24;
-						GET_COND(d->character, 0) = -1;
-						GET_COND(d->character, 1) = -1;
-						GET_COND(d->character, 2) = -1;
-						SEND_TO_Q("Implementator selected...\n\rClass :", d);
-						STATE(d) = CON_QCLASS;
-					} else {
-						SEND_TO_Q("\n\rThat's not a class.\n\rClass:", d);
-						STATE(d) = CON_QCLASS;
-					}
-				} break;
+
 				default : {
 					SEND_TO_Q("\n\rThat's not a class.\n\rClass:", d);
 					STATE(d) = CON_QCLASS;

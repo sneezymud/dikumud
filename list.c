@@ -38,7 +38,7 @@ void list(char *filename)
 	int num, days;
 	long played;
 
-	if (!(fl = fopen(filename, "r")))
+	if (!(fl = fopen(filename, "rb")))
 	{
 		perror(filename);
 		exit(1);

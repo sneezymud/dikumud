@@ -94,7 +94,7 @@ void affect_modify(struct char_data *ch, byte loc, byte mod, long bitv, bool add
 	switch(loc)
 	{
 		case APPLY_NONE:
-			break;
+ 			break;
 
 		case APPLY_STR:
 			GET_STR(ch) += mod;
@@ -129,7 +129,7 @@ void affect_modify(struct char_data *ch, byte loc, byte mod, long bitv, bool add
 			break;
 
 		case APPLY_AGE:
-/*			ch->player.time.birth += mod; */
+			ch->player.time.birth -= ((long)SECS_PER_MUD_YEAR*(long)mod); 
 			break;
 
 		case APPLY_CHAR_WEIGHT:
@@ -916,7 +916,9 @@ void extract_char(struct char_data *ch)
 	}
 
 	if (ch->in_room == NOWHERE) {
-		log("NOWHERE extracting char. (handler.c, extract_char)");
+      /* leaves nothing ! */
+
+		log("NOWHERE, extracting char.");
 		exit(1);
 	}
 

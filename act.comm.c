@@ -53,6 +53,14 @@ void do_shout(struct char_data *ch, char *argument, int cmd)
 		return;
 	}
 
+	if (GET_MOVE(ch) < 10)
+	{
+		send_to_char("You are too exhausted.\n\r", ch);
+		return;
+	}
+
+	GET_MOVE(ch) -= 10;
+
 	for (; *argument == ' '; argument++);
 
 	if (!(*argument))
@@ -76,6 +84,12 @@ void do_tell(struct char_data *ch, char *argument, int cmd)
 	char name[100], message[MAX_STRING_LENGTH],
 		buf[MAX_STRING_LENGTH];
 
+	if (IS_SET(ch->specials.act, PLR_NOTELL))
+	{
+		send_to_char("Your message didn't get through!!\n\r", ch);
+		return;
+	}
+
 	half_chop(argument,name,message);
 
 	if(!*name || !*message)
@@ -84,7 +98,8 @@ void do_tell(struct char_data *ch, char *argument, int cmd)
 		send_to_char("No-one by that name here..\n\r", ch);
 	else if (ch == vict)
 		send_to_char("You try to tell yourself something.\n\r", ch);
-	else if (GET_POS(vict) == POSITION_SLEEPING)
+	else if ((GET_POS(vict) == POSITION_SLEEPING) ||
+	         IS_SET(vict->specials.act, PLR_NOTELL))
 	{
 		act("$E can't hear you.",FALSE,ch,0,vict,TO_CHAR);
 	}

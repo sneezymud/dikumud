@@ -12,9 +12,10 @@
 #include "spells.h"
 #include "comm.h"
 
-#define READ_TITLE(ch) (GET_SEX(ch) == SEX_MALE ?   \
-	titles[GET_CLASS(ch)-1][GET_LEVEL(ch)].title_m :  \
-	titles[GET_CLASS(ch)-1][GET_LEVEL(ch)].title_f)
+#define READ_TITLE(ch) \
+   ( GET_SEX(ch) == SEX_MALE ? \
+	  titles[GET_CLASS(ch)-1][GET_LEVEL(ch)].title_m : \
+	  titles[GET_CLASS(ch)-1][GET_LEVEL(ch)].title_f )
 
 
 extern struct char_data *character_list;

@@ -54,9 +54,9 @@ AC "-----------"
 
 Is you armor class, it is defined roughly as follows:
 
-  10 Naked person
-   0 Very Heavily armored (Plate mail, and "two shields") 
- -10 Armored battle tank
+  100 Naked person
+    0 Very Heavily armored (Plate mail, and "two shields") 
+ -100 Armored battle tank
 
 #
 OPEN CLOSE LOCK UNLOCK
@@ -201,8 +201,8 @@ is asleep.
 
 Due to misuse of the steal command, it now requires at least 1,250 XP
 points to steal from other players. You can still steal from monsters
-at all levels.
-
+at all levels. Furtermore steal takes time to perform. you can't just
+rush in, steal 20-30 times and quit (unless you have a LOT of time).
 
 Example:
 
@@ -217,10 +217,8 @@ BACKSTAB
 Thief only.
 
 Is a way to sneak up on a person, and attempt to place you dagger in his
-bag, at exactly the point where it does most damage. A successful backstab
-gives a damage multiplier, depending on level:
-
-
+back, at exactly the point where it does most damage. A successful backstab
+gives a damage multiplier, depending on level.
 
 The chance of successfully backstabbing a person depends on how well you
 have practiced backstab at your guild. You can always backstab sleeping
@@ -259,6 +257,14 @@ you're in.
 #
 ORDER
 In bars etc you can order things.
+
+In addition, you can order people who're under your charm to do things:
+
+   order Sober say I'm a jerk and I know it.
+
+Or you can order all the people who're charmed by you, like this:
+
+   order followers say We worship you, leader!!
 #
 BUY SELL
 Commands for the shops - very useful too !
@@ -375,7 +381,8 @@ QUIT
 When you get tired of playing, you can leave the game by typing 'quit'. Note
 that whatever stuff you might be carrying with you is simply left on the
 ground. If you wish to have your equipment put away until you are able to come
-back, you'll have to find an inn.
+back, you'll have to find an inn. Furthermore if you quit in a bad situation
+like when fighting or lying wounded on the ground, you will loose EXP!!!
 
 See also: INN
 #
@@ -581,11 +588,11 @@ wand to avoid confusion.
 #
 ARMOR
 
-Usage       : cast 'armor' [self]
+Usage       : cast 'armor' <victim>
 Accumulative: No
 Duration    : 24 Hours
 
-The Armor spell will improve your AC by 2.
+The Armor spell will improve your AC by 20.
 
 See Also: AC
 #
@@ -859,8 +866,8 @@ points in one strike.
 
 See Also: -
 #
-SLEEP
-Usage       : cast 'sleep' <person>
+ZZZZZ
+Usage       : cast 'zzzzz' <person>
 Accumulative: Yes (duration)
 Duration    : 4 hours + one hour per level
 
@@ -870,7 +877,7 @@ A person who is affected by sleep can only be awakened if attacked.
 See Also: -
 #
 STRENGTH
-Usage       : cast 'strength' <victim>
+Usage       : cast 'strength' [self]
 Accumulative: Yes (strength)
 Duration    : Level hours
 
@@ -997,8 +1004,8 @@ This spell is more powerful than the shocking grasp spell.
 
 See Also: SHOCKING GRASP
 #
-"COLOR SPRAY"
-Usage       : cast 'color spray' <victim>
+"COLOUR SPRAY"
+Usage       : cast 'colour spray' <victim>
 Accumulative: -
 Duration    : Instantaneous
 Level       : Level 11 magic user.
@@ -1154,7 +1161,7 @@ SPELL SPELLS
           (13) Energy Drain        (13) Control Weather
           (13) -                   (13) Sanctuary
 
-          (14) Sleep               (14) Heal
+          (14) Zzzzz               (14) Heal
           (14) Charm Person        (14) -
 
           (15) Clone               (15) Harm
@@ -1194,31 +1201,69 @@ out a solution. There are two cases:
 #
 HOUSES
 
+
 Player Houses in DikuMUD
 ------------------------
 
-In DikuMUD it is possible for players on all experience levels to buy a house
-in the residential area in the southern part of Midgaard.
+In DikuMUD it is possible for players on all experience levels to purchase a
+house in the residential area in the southern part of Midgaard.  As some
+areas are more sought after than others, the prices tend to vary quite a bit.
+These are the prices for a house with two rooms and an ordinary lock.
 
-As some areas are more sought after than others, the prices vary quite a bit.
-The base price of a house with two rooms and an ordinary lock is as follows:
-
-                   House on Emerald Avenue : 400,000 coins
-                   House on Park Road      : 300,000 coins
-                   House on Elm Street     : 200,000 coins
+                House on Emerald Avenue        : 400,000 coins
+                House on Park Road             : 300,000 coins
+                House on Elm Street
+                      or Penny Lane            : 200,000 coins
 
 Extra rooms can be purchased at 50,000 coins each.
 
-The following objects can be purchased for an extra price:
+The houses cannot be used directly as one-time rent rooms where multiple
+items (like weapons and armour) can be stored, as ordinary items stored in
+the house will be lost during a crash or a shutdown.
 
-                   Coffee Machine          :   5,000 coins
-                   Tea Macine              :   5,000 coins
-                   Water Machine           :   5,000 coins
-                   Coke Machine            :   5,000 coins
-                   Pick-safe lock          :  50,000 coins
-                   Interdimensional gate   : 100,000 coins
+Instead of risking the loss of your favourite item, it is possible to have
+special items manufactured (at a special price, of course) that will be
+located somewhere in your house every time you log in.  The price of each
+such item has to be decided in each specific case but as a guideline the
+ordinary purchase price times ten can be used.
+
+It is also possible to purchase various household equipment to be installed
+in a house.  The following list contains prices of the items that are
+available at the time of writing.  More are sure to come and if you have any
+special wishes, we will do our very best to fulfill them.
+
+                Coffee Machine                 :   5,000 coins
+                Tea Macine                     :   5,000 coins
+                Coke Machine                   :   5,000 coins
+                Water Machine                  :   5,000 coins
+
+The above mentioned machines are all manufactured by Quifatronic Inc. and
+produce one unit of the specified drink per game refresh.  All machines are
+able to hold three units at a time.
+
+The following special equipment is also installable in any house at the given
+prices.
+
+                Magic trashcan (no emptying)   :  25,000 coins
+                Pick-safe lock                 :  50,000 coins
+                Interdimensional gate          : 100,000 coins (*)
+                Magical shielding              : 200,000 coins (**)
+
+(*) An interdimensional gate is a one-way magical portal that leads to a
+specific distant location in the world.  When ordering an interdimensional
+gate, please state where you want it to lead to.
+
+(**) Magical shielding is a powerful spell that when cast upon a house will
+shield its rooms from users of teleport spells, making it impossible from any
+mortal to enter (except by the door, of course) unless specifically summoned.
+
+Of course it is possible to have additional rooms and equipment added to an
+already existing house.  This means that you do not have to purchase
+everything at once but can add new features to your house as you earn more
+money and as they become available.
 
 Contact Quifael for further information.
+E-mail: maze@freja.diku.dk
 #
 COMPACT
 If you have a small display you might want to use this command. It turns off

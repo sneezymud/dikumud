@@ -16,7 +16,7 @@
 
 #define SHOP_FILE "tinyworld.shp"
 #define MAX_TRADE 5
-#define MAX_PROD 5
+#define MAX_PROD 6
 
 extern struct str_app_type str_app[];
 extern struct index_data *mob_index;
@@ -450,7 +450,8 @@ int shop_keeper(struct char_data *ch, int cmd, char *arg)
 		return(TRUE);
 	}
 
-	if ((cmd == 25) || (cmd==70))   /* Kill or Hit */
+/*
+	if ((cmd == 25) || (cmd==70)) 
 	{
 		one_argument(arg, argm);
 
@@ -459,10 +460,11 @@ int shop_keeper(struct char_data *ch, int cmd, char *arg)
 			shopping_kill(arg,ch,keeper,shop_nr);
 			return(TRUE);
 		}
-	} else if ((cmd==84) || (cmd==207) || (cmd==172)) {   /* Cast, recite, use */
+	} else if ((cmd==84) || (cmd==207) || (cmd==172)) {
 		act("$N tells you 'No magic here - kid!'.", FALSE, ch, 0, keeper, TO_CHAR);
     return TRUE;
 	}
+*/
 
 	return(FALSE);
 }

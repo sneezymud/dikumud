@@ -138,7 +138,7 @@ char *spells[]=
    "remove curse",
    "sanctuary",
    "shocking grasp",
-   "sleep",
+   "zzzzz",
    "strength",
    "summon",
    "ventriloquate",      /* 41 */
@@ -859,7 +859,7 @@ void assign_spell_pointers(void)
 	SPELLO(29,12,POSITION_STANDING, 4, 21, 5,
 	 TAR_CHAR_ROOM | TAR_OBJ_INV | TAR_OBJ_ROOM | TAR_OBJ_EQUIP, cast_invisibility);
 
-	SPELLO(31,12,POSITION_STANDING, 6, 21, 20,
+	SPELLO(31,12,POSITION_STANDING, 6, 10, 20,
 	 TAR_OBJ_WORLD, cast_locate_object);
 
 	SPELLO(33,12,POSITION_STANDING,21,  8, 10,

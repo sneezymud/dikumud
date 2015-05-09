@@ -44,7 +44,7 @@ int mar_gate(struct char_data *ch, int cmd, char *arg)
 
 			for(i=0; i<MAX_WEAR; i++) {
 				if ((desc->character->equipment[i]) &&
-					((j=obj_index[desc->character->equipment[i]->item_number].virtual)>=8000) &&
+					((j=obj_index[desc->character->equipment[i]->item_number].virtual)>=8500) &&
 		       (j<8999) ) {
 					obj=unequip_char(desc->character, i);
 					GET_GOLD(desc->character) -= obj->obj_flags.cost;

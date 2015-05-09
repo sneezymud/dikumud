@@ -44,6 +44,7 @@ extern struct room_data *world;	  /* In db.c */
 extern int top_of_world;            /* In db.c */
 extern struct time_info_data time_info;  /* In db.c */
 extern char help[];
+extern bool wizlock;
 
 /* local globals */
 
@@ -51,7 +52,7 @@ struct descriptor_data *descriptor_list, *next_to_process;
 
 int lawful = 0;		/* work like the game regulator */
 int slow_death = 0;  /* Shut her down, Martha, she's sucking mud */
-int diku_shutdown = 0;    /* clean shutdown */
+int shutdown = 0;    /* clean shutdown */
 int reboot = 0;      /* reboot the game after a shutdown */
 int no_specials = 0; /* Suppress ass. of special routines */
 
@@ -245,17 +246,18 @@ int game_loop(int s)
 
 	opt_time.tv_usec = OPT_USEC;  /* Init time values */
 	opt_time.tv_sec = 0;
-	gettimeofday(&last_time, (struct timezone *) 0);
+	gettimeofday(&last_time, (struct timeval *) 0);
 
 	maxdesc = s;
 	avail_descs = getdtablesize() - 2; /* !! Change if more needed !! */
 
 	mask = sigmask(SIGUSR1) | sigmask(SIGUSR2) | sigmask(SIGINT) |
 		sigmask(SIGPIPE) | sigmask(SIGALRM) | sigmask(SIGTERM) |
-		sigmask(SIGURG) | sigmask(SIGXCPU) | sigmask(SIGHUP);
+		sigmask(SIGURG) | sigmask(SIGXCPU) | sigmask(SIGHUP) |
+		sigmask(SIGVTALRM);
 
 	/* Main loop */
-	while (!diku_shutdown)
+	while (!shutdown)
 	{
 		/* Check what's happening out there */
 		FD_ZERO(&input_set);
@@ -270,7 +272,7 @@ int game_loop(int s)
 		}
 
 		/* check out the time */
-		gettimeofday(&now, (struct timezone *) 0);
+		gettimeofday(&now, (struct timeval *) 0);
 		timespent = timediff(&now, &last_time);
 		timeout = timediff(&opt_time, &timespent);
 		last_time.tv_sec = now.tv_sec + timeout.tv_sec;
@@ -341,6 +343,7 @@ int game_loop(int s)
 						point->character->specials.was_in_room);
 					point->character->specials.was_in_room = NOWHERE;
 					act("$n has returned.",	TRUE, point->character, 0, 0, TO_ROOM);
+					affect_total(point->character);
 				}
 
 				point->wait = 1;
@@ -540,24 +543,17 @@ int init_socket(int port)
 	char hostname[MAX_HOSTNAME+1];
 	struct sockaddr_in sa;
 	struct hostent *hp;
-/*	struct linger ld;  */
-/*  linger stuff not supported by Linux.... Taken out bsp 11/22/92 */
+	struct linger ld;
 
 	bzero(&sa, sizeof(struct sockaddr_in));
 	gethostname(hostname, MAX_HOSTNAME);
-/*	hp = gethostbyname(hostname);
+	hp = gethostbyname(hostname);
 	if (hp == NULL)
 	{
 		perror("gethostbyname");
 		exit(1);
 	}
-*/
-/* The gethostbyname function call returns NULL all the time.  I have not */
-/* gotten this to work without this, however, the only reason it is called */
-/* is to get the h_addrtype constant.  The value AF_INET is used in other */
-/* operating systems so I figure it is reasonable for here....     (bsp) */
-/*	sa.sin_family = hp->h_addrtype; */
-	sa.sin_family = AF_INET;
+	sa.sin_family = hp->h_addrtype;
 	sa.sin_port	= htons(port);
 	s = socket(AF_INET, SOCK_STREAM, 0);
 	if (s < 0) 
@@ -571,7 +567,7 @@ int init_socket(int port)
 		perror ("setsockopt REUSEADDR");
 		exit (1);
 	}
-/*
+
 	ld.l_onoff = 1;
 	ld.l_linger = 1000;
 	if (setsockopt(s, SOL_SOCKET, SO_LINGER, &ld, sizeof(ld)) < 0)
@@ -579,9 +575,7 @@ int init_socket(int port)
 		perror("setsockopt LINGER");
 		exit(1);
 	}
-*/
-/* linger stuff taken out by bsp */
-	if (bind(s,(struct sockaddr *)&sa, sizeof(sa)) < 0)
+	if (bind(s, &sa, sizeof(sa), 0) < 0)
 	{
 		perror("bind");
 		close(s);
@@ -597,8 +591,7 @@ int init_socket(int port)
 
 int new_connection(int s)
 {
-/*	struct sockaddr_in isa;*/
-	struct sockaddr isa;
+	struct sockaddr_in isa;
 	/* struct sockaddr peer; */
 	int i;
 	int t;
@@ -645,9 +638,15 @@ int new_descriptor(int s)
 
 	if ((desc = new_connection(s)) < 0)
 		return (-1);
-	
 
-	if ((maxdesc + 1) >= avail_descs)
+	if (wizlock)
+	{
+		write_to_descriptor(desc, "The game is wizlocked...");
+		close(desc);
+		return(0);
+	}
+
+	if ((desc + 1) >= avail_descs)
 	{
 		write_to_descriptor(desc, "Sorry.. The game is full...\n\r");
 		close(desc);
@@ -667,10 +666,9 @@ int new_descriptor(int s)
 		*newd->host = '\0';
 	}
 	else if (!(from = gethostbyaddr((char*)&sock.sin_addr,
-		sizeof(sizeof(sock.sin_addr)), AF_INET)))
+		sizeof(sock.sin_addr), AF_INET)))
 	{
-		perror("gethostbyaddr");
-		*newd->host = '\0';
+		strcpy(newd->host, inet_ntoa(sock.sin_addr));
 	}
 	else
 	{
@@ -955,7 +953,7 @@ void close_socket(struct descriptor_data *d)
 
 void nonblock(int s)
 {
-	if (fcntl(s, F_SETFL, O_NDELAY) == -1)
+	if (fcntl(s, F_SETFL, FNDELAY) == -1)
 	{
 		perror("Noblock");
 		exit(1);
@@ -993,8 +991,8 @@ void coma(int s)
 
 	sigsetmask(sigmask(SIGUSR1) | sigmask(SIGUSR2) | sigmask(SIGINT) |
 		sigmask(SIGPIPE) | sigmask(SIGALRM) | sigmask(SIGTERM) |
-		sigmask(SIGURG) | sigmask(SIGXCPU) | sigmask(SIGHUP));
-
+		sigmask(SIGURG) | sigmask(SIGXCPU) | sigmask(SIGHUP) |
+		sigmask(SIGVTALRM));
 
 	while (descriptor_list)
 		close_socket(descriptor_list);
